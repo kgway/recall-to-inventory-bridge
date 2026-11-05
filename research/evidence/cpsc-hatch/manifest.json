@@ -1,0 +1,65 @@
+{
+  "purpose": "CPSC API contract probe; not an application integration test",
+  "requested_url": "https://www.saferproducts.gov/RestWebServices/Recall?format=json&RecallTitle=Hatch",
+  "requested_at_utc": "2026-11-01T15:49:31.326898+00:00",
+  "success": true,
+  "http_status": 200,
+  "final_url": "https://www.saferproducts.gov/RestWebServices/Recall?format=json&RecallTitle=Hatch",
+  "content_type": "application/json; charset=utf-8",
+  "http_date": "Sun, 01 Nov 2026 15:49:28 GMT",
+  "etag": null,
+  "byte_count": 7736,
+  "sha256": "c4f2053bef866a99a4df6ad3283172cb2573e9fe452f7e9ef888b741ce8cd5b8",
+  "record_count": 3,
+  "top_level_fields": [
+    "ConsumerContact",
+    "Description",
+    "Distributors",
+    "Hazards",
+    "Images",
+    "Importers",
+    "Inconjunctions",
+    "Injuries",
+    "LastPublishDate",
+    "ManufacturerCountries",
+    "Manufacturers",
+    "ProductUPCs",
+    "Products",
+    "RecallDate",
+    "RecallID",
+    "RecallNumber",
+    "Remedies",
+    "RemedyOptions",
+    "Retailers",
+    "SoldAtLabel",
+    "Title",
+    "URL"
+  ],
+  "records_with_upc": 0,
+  "records_with_product_model": 0,
+  "records": [
+    {
+      "RecallID": 9996,
+      "RecallNumber": "24291",
+      "Title": "Hatch Baby Recalls Power Adapters Sold with Rest 1st Generation Sound Machines Due to Shock Hazard",
+      "URL": "https://www.cpsc.gov/Recalls/2024/Hatch-Baby-Recalls-Power-Adapters-Sold-with-Rest-1st-Generation-Sound-Machines-Due-to-Shock-Hazard",
+      "LastPublishDate": "2024-07-03T00:00:00"
+    },
+    {
+      "RecallID": 1283,
+      "RecallNumber": "13085",
+      "Title": "Brower Recalls Top Hatch Egg Incubators Due to Fire Hazard",
+      "URL": "https://www.cpsc.gov/Recalls/2013/Brower-Recalls-Top-Hatch-Egg-Incubators-Due-to-Fire-Hazard",
+      "LastPublishDate": "2015-01-13T00:00:00"
+    },
+    {
+      "RecallID": 1210,
+      "RecallNumber": "00128",
+      "Title": "CPSC, Ace Hardware Corp. Announce Recall of Shingling Hatchets",
+      "URL": "https://www.cpsc.gov/Recalls/2000/CPSC-Ace-Hardware-Corp-Announce-Recall-of-Shingling-Hatchets",
+      "LastPublishDate": "2000-03-22T00:00:00"
+    }
+  ],
+  "interpretation": "An empty result does not verify field coverage or matching quality.",
+  "elapsed_seconds": 1.469
+}

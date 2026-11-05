@@ -1,0 +1,184 @@
+{
+  "purpose": "CPSC API contract probe; not an application integration test",
+  "requested_url": "https://www.saferproducts.gov/RestWebServices/Recall?format=json&LastPublishDateStart=2026-10-26&LastPublishDateEnd=2026-11-01",
+  "requested_at_utc": "2026-11-01T15:50:07.992622+00:00",
+  "success": true,
+  "http_status": 200,
+  "final_url": "https://www.saferproducts.gov/RestWebServices/Recall?format=json&LastPublishDateStart=2026-10-26&LastPublishDateEnd=2026-11-01",
+  "content_type": "application/json; charset=utf-8",
+  "http_date": "Sun, 01 Nov 2026 15:50:04 GMT",
+  "etag": null,
+  "byte_count": 56814,
+  "sha256": "f99d267ba6bc3d631ec38dd3adabc3183b14e15e50e9f11e323208f00f036bc8",
+  "record_count": 20,
+  "top_level_fields": [
+    "ConsumerContact",
+    "Description",
+    "Distributors",
+    "Hazards",
+    "Images",
+    "Importers",
+    "Inconjunctions",
+    "Injuries",
+    "LastPublishDate",
+    "ManufacturerCountries",
+    "Manufacturers",
+    "ProductUPCs",
+    "Products",
+    "RecallDate",
+    "RecallID",
+    "RecallNumber",
+    "Remedies",
+    "RemedyOptions",
+    "Retailers",
+    "SoldAtLabel",
+    "Title",
+    "URL"
+  ],
+  "records_with_upc": 0,
+  "records_with_product_model": 0,
+  "records": [
+    {
+      "RecallID": 11041,
+      "RecallNumber": "27055",
+      "Title": "Bodum USA Recalls 5.9 Million French Press Coffee Makers with Replaceable Glass Carafes Due to Risk of Serious Burn Injury",
+      "URL": "https://cpsc.gov/Recalls/2027/Bodum-USA-Recalls-5-9-Million-French-Press-Coffee-Makers-with-Replaceable-Glass-Carafes-Due-to-Risk-of-Serious-Burn-Injury",
+      "LastPublishDate": "2026-10-29T00:00:00"
+    },
+    {
+      "RecallID": 11038,
+      "RecallNumber": "27054",
+      "Title": "DREO Recalls DR-HSH015 Space Heaters Due to Fire and Burn Hazards",
+      "URL": "https://cpsc.gov/Recalls/2027/DREO-Recalls-DR-HSH015-Space-Heaters-Due-to-Fire-and-Burn-Hazards",
+      "LastPublishDate": "2026-10-29T00:00:00"
+    },
+    {
+      "RecallID": 11039,
+      "RecallNumber": "27045",
+      "Title": "Fashion Brand Apparel Recalls QZH.DUAO Pajama Sets Due to Risk of Serious Injury or Death from Burn Hazard; Violate Mandatory Standards for Children’s Sleepwear",
+      "URL": "https://cpsc.gov/Recalls/2027/Fashion-Brand-Apparel-Recalls-QZH-DUAO-Pajama-Sets-Due-to-Risk-of-Serious-Injury-or-Death-from-Burn-Hazard-Violate-Mandatory-Standards-for-Childrens-Sleepwear",
+      "LastPublishDate": "2026-10-29T00:00:00"
+    },
+    {
+      "RecallID": 11044,
+      "RecallNumber": "27056",
+      "Title": "HAIARA Power Banks Recalled Due to Risk of Serious Injury or Death from Fire and Burn Hazards; Sold on Amazon.com by Mitrytech",
+      "URL": "https://cpsc.gov/Recalls/2027/HAIARA-Power-Banks-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-and-Burn-Hazards-Sold-on-Amazon-com-by-Mitrytech",
+      "LastPublishDate": "2026-10-29T00:00:00"
+    },
+    {
+      "RecallID": 11033,
+      "RecallNumber": "27060",
+      "Title": "Harkla Recalls Children’s Sensory Swings Due to Risk of Serious Injury from Fall Hazard",
+      "URL": "https://cpsc.gov/Recalls/2027/Harkla-Recalls-Childrens-Sensory-Swings-Due-to-Risk-of-Serious-Injury-from-Fall-Hazard",
+      "LastPublishDate": "2026-10-29T00:00:00"
+    },
+    {
+      "RecallID": 11036,
+      "RecallNumber": "27061",
+      "Title": "Longjili Trading Recalls Pamag Pieeoo Mattresses Due to Risk of Serious Injury or Death from Fire Hazard; Violate Mandatory Standard for Mattress Flammability\n",
+      "URL": "https://cpsc.gov/Recalls/2027/Longjili-Trading-Recalls-Pamag-Pieeoo-Mattresses-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-Hazard-Violate-Mandatory-Standard-for-Mattress-Flammability",
+      "LastPublishDate": "2026-10-29T00:00:00"
+    },
+    {
+      "RecallID": 11040,
+      "RecallNumber": "27051",
+      "Title": "NTI and HTP Brand Gas Boilers Recalled Due to Risk of Serious Injury or Death from Fire, Carbon Monoxide (CO) Poisoning and Impact Hazards; Manufactured by Ariston, formerly NTI Boilers",
+      "URL": "https://cpsc.gov/Recalls/2027/NTI-and-HTP-Brand-Gas-Boilers-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-Carbon-Monoxide-CO-Poisoning-and-Impact-Hazards-Manufactured-by-Ariston-formerly-NTI-Boilers",
+      "LastPublishDate": "2026-10-29T00:00:00"
+    },
+    {
+      "RecallID": 11037,
+      "RecallNumber": "27047",
+      "Title": "PILLANI Recalls Nursing Pillows Due to Risk of Serious Injury or Death from Suffocation; Violate Mandatory Standards for Nursing Pillows",
+      "URL": "https://cpsc.gov/Recalls/2027/PILLANI-Recalls-Nursing-Pillows-Due-to-Risk-of-Serious-Injury-or-Death-from-Suffocation-Violate-Mandatory-Standards-for-Nursing-Pillows",
+      "LastPublishDate": "2026-10-29T00:00:00"
+    },
+    {
+      "RecallID": 11035,
+      "RecallNumber": "27058",
+      "Title": "RootStim Recalls Minoxidil Hair Regrowth Treatment Bottles Due to Risk of Serious Injury or Death from Child Poisoning; Violate Mandatory Standard for Child-Resistant Packaging",
+      "URL": "https://cpsc.gov/Recalls/2027/RootStim-Recalls-Minoxidil-Hair-Regrowth-Treatment-Bottles-Due-to-Risk-of-Serious-Injury-or-Death-from-Child-Poisoning-Violate-Mandatory-Standard-for-Child-Resistant-Packaging",
+      "LastPublishDate": "2026-10-29T00:00:00"
+    },
+    {
+      "RecallID": 11034,
+      "RecallNumber": "27049",
+      "Title": "SOOWERY Recalls 8-Drawer Fabric Dressers Due to Risk of Serious Injury or Death from Tip-Over and Entrapment Hazards; Violate Mandatory Standard for Clothing Storage Units",
+      "URL": "https://cpsc.gov/Recalls/2027/SOOWERY-Recalls-8-Drawer-Fabric-Dressers-Due-to-Risk-of-Serious-Injury-or-Death-from-Tip-Over-and-Entrapment-Hazards-Violate-Mandatory-Standard-for-Clothing-Storage-Units",
+      "LastPublishDate": "2026-10-29T00:00:00"
+    },
+    {
+      "RecallID": 11043,
+      "RecallNumber": "27050",
+      "Title": "Whatever Works Recalls Microwave Grills Due to Risk of Serious Injury or Death from Fire Hazard",
+      "URL": "https://cpsc.gov/Recalls/2027/Whatever-Works-Recalls-Microwave-Grills-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-Hazard",
+      "LastPublishDate": "2026-10-29T00:00:00"
+    },
+    {
+      "RecallID": 11042,
+      "RecallNumber": "27059",
+      "Title": "Yinklev Recalls Jocoevol 6-Drawer Dressers Due to Risk of Serious Injury or Death from Tip-Over and Entrapment Hazards; Violate Mandatory Standard for Clothing Storage Units",
+      "URL": "https://cpsc.gov/Recalls/2027/Yinklev-Recalls-Jocoevol-6-Drawer-Dressers-Due-to-Risk-of-Serious-Injury-or-Death-from-Tip-Over-and-Entrapment-Hazards-Violate-Mandatory-Standard-for-Clothing-Storage-Units",
+      "LastPublishDate": "2026-10-29T00:00:00"
+    },
+    {
+      "RecallID": 6228,
+      "RecallNumber": "99027",
+      "Title": "CPSC, DeWalt Announce Recall to Repair Framing Saws",
+      "URL": "https://www.cpsc.gov/Recalls/1999/CPSC-DeWalt-Announce-Recall-to-Repair-Framing-Saws",
+      "LastPublishDate": "2026-10-29T00:00:00"
+    },
+    {
+      "RecallID": 6227,
+      "RecallNumber": "99026",
+      "Title": "CPSC Announces Multiple Play Yard Recalls Due to Strangulation Hazard",
+      "URL": "https://www.cpsc.gov/Recalls/1999/CPSC-Announces-Multiple-Play-Yard-Recalls-Due-to-Strangulation-Hazard",
+      "LastPublishDate": "2026-10-29T00:00:00"
+    },
+    {
+      "RecallID": 6226,
+      "RecallNumber": "99024",
+      "Title": "CPSC, Pacific Scientific Co. Announce Recall of Treadmills",
+      "URL": "https://www.cpsc.gov/Recalls/1999/CPSC-Pacific-Scientific-Co-Announce-Recall-of-Treadmills",
+      "LastPublishDate": "2026-10-28T00:00:00"
+    },
+    {
+      "RecallID": 6224,
+      "RecallNumber": "99021",
+      "Title": "Kolcraft, Playskool Double Reward for Return of Recalled Portable Cribs",
+      "URL": "https://www.cpsc.gov/Recalls/1999/Kolcraft-Playskool-Double-Reward-for-Return-of-Recalled-Portable-Cribs",
+      "LastPublishDate": "2026-10-26T00:00:00"
+    },
+    {
+      "RecallID": 6225,
+      "RecallNumber": "99022a",
+      "Title": "Entertainment Units Recalled by AIG Designs Holding",
+      "URL": "https://www.cpsc.gov/Recalls/1999/Entertainment-Units-Recalled-by-AIG-Designs-Holding",
+      "LastPublishDate": "2026-10-27T00:00:00"
+    },
+    {
+      "RecallID": 6748,
+      "RecallNumber": "99022b",
+      "Title": "Soldering Irons Recalled by Custom Accessories",
+      "URL": "https://www.cpsc.gov/Recalls/1999/Soldering-Irons-Recalled-by-Custom-Accessories",
+      "LastPublishDate": "2026-10-27T00:00:00"
+    },
+    {
+      "RecallID": 6747,
+      "RecallNumber": "99020b",
+      "Title": "\"Henry\" Gym Sets Recalled by Menard",
+      "URL": "https://www.cpsc.gov/Recalls/1999/Henry-Gym-Sets-Recalled-by-Menard",
+      "LastPublishDate": "2026-10-26T00:00:00"
+    },
+    {
+      "RecallID": 6223,
+      "RecallNumber": "99020a",
+      "Title": "Bedside Cradles Recalled by W.C. Redmon",
+      "URL": "https://www.cpsc.gov/Recalls/1999/Bedside-Cradles-Recalled-by-WC-Redmon",
+      "LastPublishDate": "2026-10-26T00:00:00"
+    }
+  ],
+  "interpretation": "An empty result does not verify field coverage or matching quality.",
+  "elapsed_seconds": 0.813
+}

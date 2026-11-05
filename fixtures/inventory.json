@@ -1,0 +1,130 @@
+[
+  {
+    "lot_id": "DREO-start",
+    "sku": "DEMO-HEATER",
+    "name": "DREO space heater",
+    "brand": "DREO",
+    "model": "DR-HSH015",
+    "manufactured_month": "2025-04",
+    "quantity": 5,
+    "synthetic": true
+  },
+  {
+    "lot_id": "DREO-inside",
+    "sku": "DEMO-HEATER",
+    "name": "DREO space heater",
+    "brand": "DREO",
+    "model": "DR-HSH015",
+    "manufactured_month": "2025-10",
+    "quantity": 5,
+    "synthetic": true
+  },
+  {
+    "lot_id": "DREO-end",
+    "sku": "DEMO-HEATER",
+    "name": "DREO space heater",
+    "brand": "DREO",
+    "model": "DR-HSH015",
+    "manufactured_month": "2026-01",
+    "quantity": 5,
+    "synthetic": true
+  },
+  {
+    "lot_id": "DREO-before",
+    "sku": "DEMO-HEATER",
+    "name": "DREO space heater",
+    "brand": "DREO",
+    "model": "DR-HSH015",
+    "manufactured_month": "2025-03",
+    "quantity": 5,
+    "synthetic": true
+  },
+  {
+    "lot_id": "DREO-after",
+    "sku": "DEMO-HEATER",
+    "name": "DREO space heater",
+    "brand": "DREO",
+    "model": "DR-HSH015",
+    "manufactured_month": "2026-02",
+    "quantity": 5,
+    "synthetic": true
+  },
+  {
+    "lot_id": "DREO-unknown",
+    "sku": "DEMO-HEATER",
+    "name": "DREO space heater",
+    "brand": "DREO",
+    "model": "DR-HSH015",
+    "manufactured_month": null,
+    "quantity": 5,
+    "synthetic": true
+  },
+  {
+    "lot_id": "HATCH-unknown",
+    "sku": "DEMO-SOUND-1",
+    "name": "Hatch Rest sound machine",
+    "brand": "Hatch",
+    "model": "Rest",
+    "manufactured_month": null,
+    "quantity": 5,
+    "synthetic": true,
+    "generation": "1",
+    "adapter_model": null
+  },
+  {
+    "lot_id": "HATCH-adapter",
+    "sku": "DEMO-SOUND-1",
+    "name": "Hatch Rest with adapter",
+    "brand": "Hatch",
+    "model": "Rest",
+    "manufactured_month": null,
+    "quantity": 5,
+    "synthetic": true,
+    "generation": "1",
+    "adapter_model": "CYAP05 050100U"
+  },
+  {
+    "lot_id": "HATCH-generation-2",
+    "sku": "DEMO-SOUND-2",
+    "name": "Hatch Rest second generation",
+    "brand": "Hatch",
+    "model": "Rest",
+    "manufactured_month": null,
+    "quantity": 5,
+    "synthetic": true,
+    "generation": "2",
+    "adapter_model": null
+  },
+  {
+    "lot_id": "ANKER-unverified",
+    "sku": "DEMO-POWER",
+    "name": "Anker PowerCore 10000",
+    "brand": "Anker",
+    "model": "A1263",
+    "manufactured_month": null,
+    "quantity": 5,
+    "synthetic": true,
+    "serial_verification": "unknown"
+  },
+  {
+    "lot_id": "ANKER-model-unknown",
+    "sku": "DEMO-POWER-UNKNOWN",
+    "name": "Anker power bank",
+    "brand": "Anker",
+    "model": null,
+    "manufactured_month": null,
+    "quantity": 5,
+    "synthetic": true,
+    "serial_verification": "unknown"
+  },
+  {
+    "lot_id": "CONTROL-unrelated",
+    "sku": "DEMO-LAMP",
+    "name": "Synthetic unrelated desk lamp",
+    "brand": "DemoCo",
+    "model": "LAMP-ONLY-01",
+    "manufactured_month": null,
+    "quantity": 5,
+    "synthetic": true
+  }
+]

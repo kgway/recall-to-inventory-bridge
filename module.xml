@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SPDX-License-Identifier: MPL-2.0 -->
+<Export generator="Cache" version="25">
+  <Document name="recall-to-inventory-bridge.ZPM">
+    <Module>
+      <Name>recall-to-inventory-bridge</Name>
+      <Version>0.1.0</Version>
+      <Description>Inventory snapshot imports, CPSC candidate discovery and evidence-backed advisories using IRIS Interoperability and AI Hub. Existing systems retain action authority.</Description>
+      <Keywords>recall,cpsc,inventory,interoperability,ai-hub</Keywords>
+      <Author><Person>kgway</Person><CopyrightDate>2026</CopyrightDate><License>MPL-2.0</License></Author>
+      <Packaging>module</Packaging>
+      <LifecycleClass>RecallGuard.IPMLifecycle</LifecycleClass>
+      <SystemRequirements Version="&gt;=2026.3" Interoperability="enabled" IPMVersion="&gt;=0.10.10"/>
+      <SourcesRoot>src</SourcesRoot>
+      <Resource Name="RecallGuard.Package.CLS" Directory="preload" Preload="true"/>
+      <Resource Name="RecallGuard.IPMLifecycle.CLS" Directory="preload" Preload="true"/>
+      <Resource Name="RecallGuard.PKG" Directory="."/>
+      <Invoke Class="RecallGuard.Package" Method="Preflight" Phase="Compile" When="Before" CheckStatus="true"/>
+      <!-- Enumerate source files so local __pycache__ or ignored files cannot enter the package. -->
+      <FileCopy Name="python/recall_guard/__init__.py" Target="${mgrdir}python/recall_guard/__init__.py"/>
+      <FileCopy Name="python/recall_guard/assessment_input.py" Target="${mgrdir}python/recall_guard/assessment_input.py"/>
+      <FileCopy Name="python/recall_guard/engine.py" Target="${mgrdir}python/recall_guard/engine.py"/>
+      <FileCopy Name="python/recall_guard/inventory.py" Target="${mgrdir}python/recall_guard/inventory.py"/>
+      <FileCopy Name="python/recall_guard/discovery.py" Target="${mgrdir}python/recall_guard/discovery.py"/>
+      <FileCopy Name="python/recall_guard/advisories.py" Target="${mgrdir}python/recall_guard/advisories.py"/>
+      <FileCopy Name="python/recall_guard/monitor.py" Target="${mgrdir}python/recall_guard/monitor.py"/>
+      <FileCopy Name="python/recall_guard/policy.py" Target="${mgrdir}python/recall_guard/policy.py"/>
+      <FileCopy Name="python/recall_guard/runtime.py" Target="${mgrdir}python/recall_guard/runtime.py"/>
+      <FileCopy Name="python/recall_guard/recorded_demo.py" Target="${mgrdir}python/recall_guard/recorded_demo.py"/>
+      <FileCopy Name="python/recall_guard/sources.py" Target="${mgrdir}python/recall_guard/sources.py"/>
+      <FileCopy Name="python/recall_guard/storage.py" Target="${mgrdir}python/recall_guard/storage.py"/>
+      <FileCopy Name="web/" Target="${mgrdir}python/recall_guard/assets/web/"/>
+      <FileCopy Name="fixtures/" Target="${mgrdir}python/recall_guard/assets/fixtures/"/>
+      <FileCopy Name="research/evidence/cpsc-hatch/" Target="${mgrdir}python/recall_guard/assets/research/evidence/cpsc-hatch/"/>
+      <FileCopy Name="research/evidence/cpsc-anker/" Target="${mgrdir}python/recall_guard/assets/research/evidence/cpsc-anker/"/>
+      <FileCopy Name="research/evidence/cpsc-published-window/" Target="${mgrdir}python/recall_guard/assets/research/evidence/cpsc-published-window/"/>
+      <FileCopy Name="LICENSE" Target="${mgrdir}python/recall_guard/assets/LICENSE"/>
+      <WebApplication Name="/recall-guard" NameSpace="RECALLGUARD" DispatchClass="RecallGuard.Api"
+        Enabled="1" AutheEnabled="32" LoginPage="%CSP.Login.cls" CookiePath="/recall-guard/"/>
+      <WebApplication Name="/recall-guard/auth" NameSpace="RECALLGUARD" Enabled="1" AutheEnabled="32"
+        LoginPage="%CSP.Login.cls" CookiePath="/recall-guard/" CSRFToken="1"/>
+      <Invoke Class="RecallGuard.Package" Method="Configure" Phase="Activate" When="After" CheckStatus="true"/>
+      <AfterInstallMessage>Installed without starting a Production, changing passwords, seeding data or calling an LLM. In RECALLGUARD run: do ##class(RecallGuard.Package).Start(). Sign in with your existing IRIS account at /recall-guard/auth/RecallGuard.Home.cls. See docs/ipm.md for the verified prerequisites and live-inference setup.</AfterInstallMessage>
+    </Module>
+  </Document>
+</Export>

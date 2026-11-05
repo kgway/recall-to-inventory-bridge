@@ -1,0 +1,67 @@
+<!doctype html>
+<!-- SPDX-License-Identifier: MPL-2.0 -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <base href="/recall-guard/">
+  <title>Recall-to-Inventory Bridge · Inventory safety</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/retailer-request.js" defer></script>
+  <script src="assets/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./"><span class="mark">RIB</span><span>Recall-to-Inventory Bridge<small>RECALL OPERATIONS</small></span></a>
+    <span class="environment">READ-ONLY INVENTORY BRIDGE · US CPSC</span>
+    <span id="connection" class="connection">Connecting to IRIS</span>
+  </header>
+  <main>
+    <div class="heading-row"><div><p class="eyebrow">IMPORT · DISCOVER · ADVISE</p><h1>Connect recall evidence<br>to your inventory workflow.</h1><p class="intro">Import a stock snapshot. Find CPSC candidates. Return evidence-backed advice to the systems you already use.</p></div>
+      <div class="setup-actions"><button id="seed" class="primary" disabled hidden>Load inventory for live AI</button><button id="refresh" disabled hidden>Refresh CPSC sources</button></div>
+    </div>
+    <div id="message" class="message" role="status" aria-live="polite" hidden></div>
+    <div class="scope-note"><span class="dot"></span><p><strong>Advisory only</strong> <span id="scope">Connect to IRIS to load the active scope.</span> Your inventory system owns sales, shipments and stock changes. Search results are candidates, never clearance.</p></div>
+    <section id="bridge-import" class="guided-cases" aria-label="Inventory snapshot import">
+      <div class="section-heading"><h2>1. Import an inventory snapshot</h2><button id="inventory-sample" type="button">Load sample export</button></div><p>CSV or JSON from an ERP, WMS or spreadsheet. The bridge stores a local copy; it has no connection or write credentials to your inventory system. Up to 100 records in this evaluation workspace.</p>
+      <div class="bridge-form"><label>Source system<input id="inventory-source" value="sample-erp" maxlength="160"></label><label>Format<select id="inventory-format"><option value="csv">CSV</option><option value="json">JSON</option></select></label><label>CSV delimiter<select id="inventory-delimiter"><option value=",">Comma</option><option value=";">Semicolon</option><option value="tab">Tab</option></select></label><label>Choose a UTF-8 file<input id="inventory-file" type="file" accept=".csv,.json,.tsv,text/csv,application/json"></label></div>
+      <label>File content<textarea id="inventory-content" rows="5" placeholder="sku,name,quantity,brand,model,lot_number,manufactured_month,location"></textarea></label>
+      <details><summary>Column mapping and import options</summary><p>Common column names are detected. Map canonical fields to your exact headers when needed, for example {"sku":"Item Code","name":"Description","quantity":"On Hand"}. Unmapped columns are ignored. Supply external_id, or distinguish each SKU / lot_number / location combination.</p><label>Column mapping JSON<textarea id="inventory-mapping" rows="2">{}</textarea></label><label>Import ID<input id="inventory-import-id" maxlength="100"></label></details>
+      <label><input id="inventory-example" type="checkbox"> These rows are synthetic example data</label>
+      <div class="card-actions"><button id="inventory-preview" type="button" disabled>Preview import</button><button id="inventory-commit" class="primary" type="button" disabled>Import previewed snapshot</button></div><div id="inventory-preview-result" aria-live="polite"></div>
+    </section>
+    <section id="bridge-discovery" class="guided-cases" aria-label="Inventory-driven recall discovery" hidden><h2>2. Find relevant CPSC notices</h2><p>Review the public product terms before retrieval. Search uses the official CPSC API, requires no AI key and makes no inventory changes. At most eight queries per search; results are incomplete candidate retrieval.</p><div class="card-actions"><button id="discovery-plan" type="button" disabled>Review search terms</button><button id="discovery-start" class="primary" type="button" disabled>Search CPSC with these terms</button></div><div id="discovery-plan-result"></div><div id="discovery-results" aria-live="polite"></div></section>
+    <section class="guided-cases" aria-label="Advisory export"><h2>3. Hand advice to your existing workflow</h2><p>Authenticated JSON/CSV feeds include source record references, evidence versions and assessment scope. No sale, shipment or quantity update is sent to an external system. An unassessed or unmatched search is never an assurance of safety.</p><div class="card-actions"><a class="export-link" href="api/advisories/json" download="recall-advisories.json">Download advisory JSON</a><a class="export-link" href="api/advisories/csv" download="recall-advisories.csv">Download advisory CSV</a></div></section>
+    <section id="bridge-monitor" class="guided-cases" aria-label="Recurring recall audit" hidden>
+      <h2>4. Keep checking for changes</h2><p>Run an audit now or enable recurring checks. Each audit searches CPSC, refreshes up to five selected notices, and records new candidates, changed evidence and advice. New candidates go to review; they are not automatically selected or treated as recalled.</p>
+      <div class="bridge-form"><label><input id="audit-enabled" type="checkbox"> Check periodically while IRIS is running</label><label>Check interval<select id="audit-interval"><option value="60">1 minute (short demo)</option><option value="900">15 minutes</option><option value="3600" selected>1 hour</option><option value="86400">1 day</option></select></label></div>
+      <label><input id="audit-ai" type="checkbox"> Automatically reassess changed or unassessed inventory for selected notices with AI Hub</label>
+      <p id="audit-ai-note" class="subtle"></p><p class="subtle">Review the search terms in step 2 before enabling periodic checks. This also permits those public product terms from future inventory captures. No SKU, external ID, warehouse or quantity is sent to CPSC. No external inventory action is performed.</p>
+      <div class="card-actions"><button id="audit-save" type="button">Save audit settings</button><button id="audit-now" class="primary" type="button">Run audit now</button></div>
+      <div id="audit-status" role="status" aria-live="polite"></div><div id="audit-history"></div>
+    </section>
+    <p id="session-note" class="config" role="note" hidden>New AI investigations are disabled in this session. Inspect saved results and try synthetic retailer requests while the Production is running.</p>
+    <section id="first-visit" class="guided-cases" aria-label="First visit" hidden><h2>Optional: recorded AI and downstream simulator</h2><p>A separate sample course loads genuine historical AI proposals and revalidates them without an API key. Its sale/ship buttons operate only a local synthetic retailer simulator. Choose this or the snapshot course on an empty instance; existing data is preserved.</p><button id="load-recorded" type="button" disabled>Start recorded investigation demo</button><p id="recorded-setup-note">Requires an empty instance and AGENT_MODE=disabled. Existing data is never replaced.</p></section>
+    <div id="pending-request" class="message" role="status" hidden><p id="pending-description"></p><button id="retry-request" type="button">Check original request</button></div>
+    <p id="gate-note" class="config" role="status" hidden></p>
+    <section class="metrics" aria-label="Inventory summary">
+      <div><span>Inventory records</span><strong id="total">—</strong><small>Local snapshot or labelled demo</small></div>
+      <div><span>Recall matches</span><strong id="held">—</strong><small>Advice for your existing workflow</small></div>
+      <div><span>Needs review</span><strong id="review-count">—</strong><small>Missing or conflicting evidence</small></div>
+      <div><span>No match in selected notices</span><strong id="eligible">—</strong><small>Limited scope, no safety assurance</small></div>
+    </section>
+    <nav class="tabs" aria-label="Workspace"><button class="active" data-tab="inventory" aria-selected="true">Inventory & advice</button><button data-tab="evidence" aria-selected="false">Recall evidence</button><button data-tab="runs" aria-selected="false">Agent & audit</button></nav>
+    <section id="inventory" class="pane">
+      <div id="demo-shortcuts" class="guided-cases" aria-label="Suggested demonstration cases"><div><h2>Recorded sample cases</h2><p>Inspect the evidence. Sale and Ship below are local synthetic consumer simulations, demonstrating how an existing system could act on the advice.</p></div><div class="case-buttons"><button type="button" data-lot="DREO-start">Manufacturing boundary</button><button type="button" data-lot="DREO-before">Earlier manufacture</button><button type="button" data-lot="DREO-unknown">Missing date</button><button type="button" data-lot="HATCH-adapter">Adapter identity</button></div></div>
+      <div class="section-heading"><div><h2>Inventory snapshot & advice</h2><p>Reported quantities are reference data. Imported snapshots never expose sale, shipment or stock mutation actions.</p></div><label class="search-label">Filter lots<input id="search" type="search" placeholder="Search product, model, lot or SKU" autocomplete="off"></label></div>
+      <div class="table-wrap"><table><thead><tr><th>Product / lot</th><th>Model & manufactured</th><th>Reported units</th><th>Advice</th><th id="consumer-column">Integration</th></tr></thead><tbody id="lot-rows"><tr><td colspan="5" class="empty">Waiting for the IRIS Production.</td></tr></tbody></table></div>
+      <div id="demo-transactions"><h3 class="transaction-title">Local simulator receipts</h3><div id="transactions" class="transaction-list"><p class="empty">No requests yet.</p></div></div>
+    </section>
+    <section id="evidence" class="pane" hidden><div class="section-heading"><div><h2>Official recall evidence</h2><p>Source snapshots remain separate from agent conclusions. A new investigation uses live AI; viewing saved results makes no model request.</p></div></div><div id="recall-cards" class="recall-cards"></div></section>
+    <section id="runs" class="pane" hidden><div class="section-heading"><div><h2>Agent execution & audit</h2><p>Inspect tool calls, evidence-backed assessments and provider-returned usage.</p></div></div><div id="configuration" class="config"></div><div id="run-list"></div><h3>Operation history</h3><div id="event-list"></div></section>
+    <footer><span>Built for InterSystems IRIS Interoperability + AI Hub</span><span>Advisory only · Inference is opt-in · No paid fallback</span></footer>
+  </main>
+  <dialog id="detail-dialog"><div class="dialog-heading"><h2 id="detail-title">Lot evidence</h2><button id="close-detail" aria-label="Close details">×</button></div><div id="detail-content"></div></dialog>
+  <dialog id="review-dialog"><form id="review-form"><div class="dialog-heading"><h2>Resolve an ambiguous case</h2><button type="button" id="close-review" aria-label="Close review">×</button></div><p>The authenticated IRIS user and the current source/inventory versions will be recorded. This cannot remove a confirmed recall hold.</p><input id="review-lot" type="hidden"><label>Recall notice<select id="review-notice" required></select></label><label>Reviewed outcome<select id="review-decision"><option value="CONFIRM_RECALL">Confirm recall hold</option><option value="EXCLUDE_FOR_NOTICE">Exclude this lot from this notice</option></select></label><label>Evidence and reason<textarea id="review-reason" minlength="20" maxlength="1200" required placeholder="Describe the evidence you checked and why it resolves this case."></textarea></label><button class="primary" type="submit">Record human review</button></form></dialog>
+</body>
+</html>

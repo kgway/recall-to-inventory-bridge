@@ -1,0 +1,4 @@
+* text=auto eol=lf
+research/evidence/*/response.json -text
+*.png -text
+*.jpg -text

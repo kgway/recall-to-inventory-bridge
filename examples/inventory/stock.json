@@ -1,0 +1,16 @@
+{
+  "items": [
+    {
+      "external_id": "000301",
+      "sku": "001234",
+      "name": "DREO space heater",
+      "brand": "DREO",
+      "model": "DR-HSH015",
+      "manufactured_month": "2025-04",
+      "lot_number": "APR25",
+      "location": "EAST",
+      "quantity": 47,
+      "source_updated_at": "2026-11-04T00:00:00Z"
+    }
+  ]
+}

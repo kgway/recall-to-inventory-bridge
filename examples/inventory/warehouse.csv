@@ -1,0 +1,4 @@
+external_id,sku,name,quantity,brand,model,lot_number,manufactured_month,location,source_updated_at
+000101,HEAT-015,DREO space heater,47,DREO,DR-HSH015,LOT-APR25,2025-04,WH-EAST,2026-11-04T00:00:00Z
+000102,SOUND-REST,Hatch Rest sound machine,12,Hatch,Rest,LOT-A,,WH-WEST,2026-11-04T00:00:00Z
+000103,POWER-1263,Anker PowerCore 10000,18,Anker,A1263,LOT-B,,WH-EAST,2026-11-04T00:00:00Z

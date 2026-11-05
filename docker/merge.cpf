@@ -1,0 +1,6 @@
+[Actions]
+CreateResource:Name=%DB_RECALLGUARD_DATA,Description="Recall-to-Inventory Bridge demo data"
+CreateDatabase:Name=RECALLGUARD_DATA,Directory=/usr/irissys/mgr/recallguard-data,Resource=%DB_RECALLGUARD_DATA
+CreateResource:Name=%DB_RECALLGUARD_CODE,Description="Recall-to-Inventory Bridge application code"
+CreateDatabase:Name=RECALLGUARD_CODE,Directory=/usr/irissys/mgr/recallguard-code,Resource=%DB_RECALLGUARD_CODE
+CreateNamespace:Name=RECALLGUARD,Globals=RECALLGUARD_DATA,Routines=RECALLGUARD_CODE,Interop=1

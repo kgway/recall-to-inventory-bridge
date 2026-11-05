@@ -1,0 +1,302 @@
+{
+  "at_utc": "2026-11-04T12:09:00.378142+00:00",
+  "success": true,
+  "run_id": "6e9d0b1500614c66b0dd5da25e41f7f9",
+  "llm_called_by_this_check": false,
+  "scan_limit_headers": 10000,
+  "session_ids": [
+    64,
+    209,
+    213
+  ],
+  "messages": [
+    {
+      "ID": 64,
+      "SessionId": 64,
+      "SourceConfigName": "CPSCPoller",
+      "TargetConfigName": "Triage",
+      "MessageBodyClassName": "RecallGuard.Message.Request",
+      "MessageBodyId": "43",
+      "TimeCreated": "2026-11-04 11:55:29.375",
+      "TimeProcessed": "2026-11-04 11:55:41.553",
+      "Type": 1,
+      "action": "audit_tick",
+      "payload_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "contains_run_id": false,
+      "payload_keys": []
+    },
+    {
+      "ID": 65,
+      "SessionId": 64,
+      "SourceConfigName": "Triage",
+      "TargetConfigName": "CPSCRefresh",
+      "MessageBodyClassName": "RecallGuard.Message.Request",
+      "MessageBodyId": "43",
+      "TimeCreated": "2026-11-04 11:55:29.377",
+      "TimeProcessed": "2026-11-04 11:55:29.87",
+      "Type": 1,
+      "action": "audit_tick",
+      "payload_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "contains_run_id": false,
+      "payload_keys": []
+    },
+    {
+      "ID": 160,
+      "SessionId": 64,
+      "SourceConfigName": "CPSCRefresh",
+      "TargetConfigName": "Triage",
+      "MessageBodyClassName": "RecallGuard.Message.Response",
+      "MessageBodyId": "139",
+      "TimeCreated": "2026-11-04 11:55:29.87",
+      "TimeProcessed": "2026-11-04 11:55:30.072",
+      "Type": 2,
+      "payload_sha256": "44de47b76dabdd971f00a27db491ae454c32a83eb59991819cdcfb13a06417d4",
+      "contains_run_id": false,
+      "payload_keys": [
+        "ok",
+        "result"
+      ]
+    },
+    {
+      "ID": 208,
+      "SessionId": 64,
+      "SourceConfigName": "Triage",
+      "TargetConfigName": "Agent",
+      "MessageBodyClassName": "RecallGuard.Message.Request",
+      "MessageBodyId": "187",
+      "TimeCreated": "2026-11-04 11:55:30.071",
+      "TimeProcessed": "2026-11-04 11:55:41.53",
+      "Type": 1,
+      "action": "investigate",
+      "payload_sha256": "e6e1404ecc54bfff38ea4ace1074470d884e58ed7a7d201e8d55c5c9a97e0f42",
+      "contains_run_id": false,
+      "payload_keys": [
+        "audit_cycle_id",
+        "notice_id"
+      ]
+    },
+    {
+      "ID": 209,
+      "SessionId": 209,
+      "SourceConfigName": "API",
+      "TargetConfigName": "Triage",
+      "MessageBodyClassName": "RecallGuard.Message.Request",
+      "MessageBodyId": "188",
+      "TimeCreated": "2026-11-04 11:55:30.077",
+      "TimeProcessed": "2026-11-04 11:55:30.093",
+      "Type": 1,
+      "action": "prepare_run",
+      "payload_sha256": "e6e1404ecc54bfff38ea4ace1074470d884e58ed7a7d201e8d55c5c9a97e0f42",
+      "contains_run_id": false,
+      "payload_keys": [
+        "audit_cycle_id",
+        "notice_id"
+      ]
+    },
+    {
+      "ID": 210,
+      "SessionId": 209,
+      "SourceConfigName": "Triage",
+      "TargetConfigName": "Hold",
+      "MessageBodyClassName": "RecallGuard.Message.Request",
+      "MessageBodyId": "188",
+      "TimeCreated": "2026-11-04 11:55:30.081",
+      "TimeProcessed": "2026-11-04 11:55:30.091",
+      "Type": 1,
+      "action": "prepare_run",
+      "payload_sha256": "e6e1404ecc54bfff38ea4ace1074470d884e58ed7a7d201e8d55c5c9a97e0f42",
+      "contains_run_id": false,
+      "payload_keys": [
+        "audit_cycle_id",
+        "notice_id"
+      ]
+    },
+    {
+      "ID": 211,
+      "SessionId": 209,
+      "SourceConfigName": "Hold",
+      "TargetConfigName": "Triage",
+      "MessageBodyClassName": "RecallGuard.Message.Response",
+      "MessageBodyId": "189",
+      "TimeCreated": "2026-11-04 11:55:30.092",
+      "TimeProcessed": "2026-11-04 11:55:30.092",
+      "Type": 2,
+      "payload_sha256": "4b41ce0e6f663f16577e199ea0b3ae1fbd55108c8f9415940921bb597e27deb4",
+      "contains_run_id": true,
+      "payload_keys": [
+        "ok",
+        "result"
+      ]
+    },
+    {
+      "ID": 212,
+      "SessionId": 209,
+      "SourceConfigName": "Triage",
+      "TargetConfigName": "API",
+      "MessageBodyClassName": "RecallGuard.Message.Response",
+      "MessageBodyId": "189",
+      "TimeCreated": "2026-11-04 11:55:30.092",
+      "TimeProcessed": "2026-11-04 11:55:30.095",
+      "Type": 2,
+      "payload_sha256": "4b41ce0e6f663f16577e199ea0b3ae1fbd55108c8f9415940921bb597e27deb4",
+      "contains_run_id": true,
+      "payload_keys": [
+        "ok",
+        "result"
+      ]
+    },
+    {
+      "ID": 213,
+      "SessionId": 213,
+      "SourceConfigName": "API",
+      "TargetConfigName": "Triage",
+      "MessageBodyClassName": "RecallGuard.Message.Request",
+      "MessageBodyId": "190",
+      "TimeCreated": "2026-11-04 11:55:35.273",
+      "TimeProcessed": "2026-11-04 11:55:35.277",
+      "Type": 1,
+      "action": "tool",
+      "payload_sha256": "1f9ade649ea5f78334e9e93720956eca01df27b1c771310c08e714280ef3c9f2",
+      "contains_run_id": true,
+      "payload_keys": [
+        "name",
+        "run_id"
+      ]
+    },
+    {
+      "ID": 214,
+      "SessionId": 213,
+      "SourceConfigName": "Triage",
+      "TargetConfigName": "Hold",
+      "MessageBodyClassName": "RecallGuard.Message.Request",
+      "MessageBodyId": "190",
+      "TimeCreated": "2026-11-04 11:55:35.274",
+      "TimeProcessed": "2026-11-04 11:55:35.276",
+      "Type": 1,
+      "action": "tool",
+      "payload_sha256": "1f9ade649ea5f78334e9e93720956eca01df27b1c771310c08e714280ef3c9f2",
+      "contains_run_id": true,
+      "payload_keys": [
+        "name",
+        "run_id"
+      ]
+    },
+    {
+      "ID": 215,
+      "SessionId": 213,
+      "SourceConfigName": "Hold",
+      "TargetConfigName": "Triage",
+      "MessageBodyClassName": "RecallGuard.Message.Response",
+      "MessageBodyId": "191",
+      "TimeCreated": "2026-11-04 11:55:35.276",
+      "TimeProcessed": "2026-11-04 11:55:35.277",
+      "Type": 2,
+      "payload_sha256": "4017dd32c4cd5b2514569e95e01d16a0cf4343fd0654f07cefcdd6d2a8951381",
+      "contains_run_id": false,
+      "payload_keys": [
+        "ok",
+        "result"
+      ]
+    },
+    {
+      "ID": 216,
+      "SessionId": 213,
+      "SourceConfigName": "Triage",
+      "TargetConfigName": "API",
+      "MessageBodyClassName": "RecallGuard.Message.Response",
+      "MessageBodyId": "191",
+      "TimeCreated": "2026-11-04 11:55:35.277",
+      "TimeProcessed": "2026-11-04 11:55:35.278",
+      "Type": 2,
+      "payload_sha256": "4017dd32c4cd5b2514569e95e01d16a0cf4343fd0654f07cefcdd6d2a8951381",
+      "contains_run_id": false,
+      "payload_keys": [
+        "ok",
+        "result"
+      ]
+    },
+    {
+      "ID": 217,
+      "SessionId": 64,
+      "SourceConfigName": "Agent",
+      "TargetConfigName": "Triage",
+      "MessageBodyClassName": "RecallGuard.Message.Response",
+      "MessageBodyId": "192",
+      "TimeCreated": "2026-11-04 11:55:41.53",
+      "TimeProcessed": "2026-11-04 11:55:41.533",
+      "Type": 2,
+      "payload_sha256": "7805280e51ccf3198ff49c931d662032f60f7f8ff7491a568a4b0c278d3ae906",
+      "contains_run_id": true,
+      "payload_keys": [
+        "assessments",
+        "run_id",
+        "usage"
+      ]
+    },
+    {
+      "ID": 218,
+      "SessionId": 64,
+      "SourceConfigName": "Triage",
+      "TargetConfigName": "Hold",
+      "MessageBodyClassName": "RecallGuard.Message.Request",
+      "MessageBodyId": "193",
+      "TimeCreated": "2026-11-04 11:55:41.532",
+      "TimeProcessed": "2026-11-04 11:55:41.55",
+      "Type": 1,
+      "action": "complete_run",
+      "payload_sha256": "7805280e51ccf3198ff49c931d662032f60f7f8ff7491a568a4b0c278d3ae906",
+      "contains_run_id": true,
+      "payload_keys": [
+        "assessments",
+        "run_id",
+        "usage"
+      ]
+    },
+    {
+      "ID": 219,
+      "SessionId": 64,
+      "SourceConfigName": "Hold",
+      "TargetConfigName": "Triage",
+      "MessageBodyClassName": "RecallGuard.Message.Response",
+      "MessageBodyId": "194",
+      "TimeCreated": "2026-11-04 11:55:41.551",
+      "TimeProcessed": "2026-11-04 11:55:41.552",
+      "Type": 2,
+      "payload_sha256": "2e2aebb26c375690cbed37811721944434df36f83df6032d28369fc1c10fff56",
+      "contains_run_id": true,
+      "payload_keys": [
+        "ok",
+        "result"
+      ]
+    }
+  ],
+  "run_metadata_from_message": {
+    "run_id": "6e9d0b1500614c66b0dd5da25e41f7f9",
+    "notice_id": "US-CPSC:11038",
+    "notice_version": "c823e2e31589838c501d2425749be242baa57d284b22cf4d0264d5bc26986f51",
+    "status": "COMPLETED",
+    "mode": "live",
+    "provider": "gemini",
+    "model": "gemini-3.5-flash-lite",
+    "prompt_version": "investigator-v7-advisory",
+    "policy_version": "evidence-v2",
+    "created_at": "2026-11-04T11:55:30.089815+00:00",
+    "finished_at": "2026-11-04T11:55:41.540045+00:00",
+    "tool_calls": [
+      {
+        "name": "ReadContext",
+        "at": "2026-11-04T11:55:35.276045+00:00",
+        "arguments": {},
+        "result_sha256": "981207c47f93c5f90e34b688e040688ae26a0017079c5abfa3e4380db48dc3d0"
+      }
+    ],
+    "usage": {
+      "completion_tokens": 453,
+      "prompt_tokens": 2580,
+      "total_tokens": 3033
+    },
+    "audit_cycle_id": "e63c363262c61ddd2cf3cb0fe4242353c98ce386a1f3b24ddcaefa9b96b757fe"
+  },
+  "scope": "Agent execution and application tool messages; not per-provider HTTP spans or hidden reasoning",
+  "record_type": "Technical extract of an existing verification record; not a new inference."
+}

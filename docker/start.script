@@ -1,0 +1,3 @@
+try { set sc=##class(RecallGuard.Setup).Start() if $SYSTEM.Status.IsError(sc) { do $SYSTEM.Status.DisplayError(sc) do $SYSTEM.Process.Terminate(,1) } } catch ex { write ex.DisplayString(),! do $SYSTEM.Process.Terminate(,1) }
+write "Recall-to-Inventory Bridge Production started",!
+do $SYSTEM.Process.Terminate(,0)

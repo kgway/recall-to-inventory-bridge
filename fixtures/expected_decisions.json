@@ -1,0 +1,18 @@
+{
+  "description": "Manually specified expectations for 12 synthetic lots and the three selected CPSC notices. Not supplied to the agent.",
+  "notice_order": ["US-CPSC:11038", "US-CPSC:9996", "US-CPSC:10311"],
+  "cases": [
+    {"lot_id":"DREO-start","decisions":["MATCH_RECALL","NO_MATCH_FOR_NOTICE","NO_MATCH_FOR_NOTICE"]},
+    {"lot_id":"DREO-end","decisions":["MATCH_RECALL","NO_MATCH_FOR_NOTICE","NO_MATCH_FOR_NOTICE"]},
+    {"lot_id":"DREO-inside","decisions":["MATCH_RECALL","NO_MATCH_FOR_NOTICE","NO_MATCH_FOR_NOTICE"]},
+    {"lot_id":"DREO-before","decisions":["NO_MATCH_FOR_NOTICE","NO_MATCH_FOR_NOTICE","NO_MATCH_FOR_NOTICE"]},
+    {"lot_id":"DREO-after","decisions":["NO_MATCH_FOR_NOTICE","NO_MATCH_FOR_NOTICE","NO_MATCH_FOR_NOTICE"]},
+    {"lot_id":"DREO-unknown","decisions":["INSUFFICIENT_EVIDENCE","NO_MATCH_FOR_NOTICE","NO_MATCH_FOR_NOTICE"]},
+    {"lot_id":"HATCH-adapter","decisions":["NO_MATCH_FOR_NOTICE","INSUFFICIENT_EVIDENCE","NO_MATCH_FOR_NOTICE"]},
+    {"lot_id":"HATCH-generation-2","decisions":["NO_MATCH_FOR_NOTICE","INSUFFICIENT_EVIDENCE","NO_MATCH_FOR_NOTICE"]},
+    {"lot_id":"HATCH-unknown","decisions":["NO_MATCH_FOR_NOTICE","INSUFFICIENT_EVIDENCE","NO_MATCH_FOR_NOTICE"]},
+    {"lot_id":"ANKER-unverified","decisions":["NO_MATCH_FOR_NOTICE","NO_MATCH_FOR_NOTICE","INSUFFICIENT_EVIDENCE"]},
+    {"lot_id":"ANKER-model-unknown","decisions":["NO_MATCH_FOR_NOTICE","NO_MATCH_FOR_NOTICE","INSUFFICIENT_EVIDENCE"]},
+    {"lot_id":"CONTROL-unrelated","decisions":["NO_MATCH_FOR_NOTICE","NO_MATCH_FOR_NOTICE","NO_MATCH_FOR_NOTICE"]}
+  ]
+}

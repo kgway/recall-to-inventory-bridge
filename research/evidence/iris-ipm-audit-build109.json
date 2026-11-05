@@ -1,0 +1,240 @@
+{
+  "at_utc": "2026-11-04T12:17:56.747808+00:00",
+  "success": true,
+  "build": 109,
+  "llm_called": false,
+  "registry_install": false,
+  "package_published": false,
+  "compiled_application_class_count": 21,
+  "python_source_files": 12,
+  "empty_after_install": true,
+  "production_not_auto_started": true,
+  "api_key_absent": true,
+  "iris_version": "IRIS for UNIX (Ubuntu Server LTS for x86-64 Containers) 2027.1.0AI (Build 109U) Fri Oct 30 2026 16:31:24 EDT",
+  "recorded_demo_acceptance": {
+    "at_utc": "2026-11-04T12:20:30.771315+00:00",
+    "success": true,
+    "verification_kind": "Actual IRIS Production with recorded genuine proposals",
+    "llm_called": false,
+    "fresh_ai_hub_execution": false,
+    "load_result": {
+      "mode": "recorded-demo",
+      "runs": [
+        "replay-85db90378dd04e7b95545961ea62fc9b",
+        "replay-68dcd78d8b184e229a03a0f8ab976666",
+        "replay-bc48c54e7b3f474d8563bf334d1f51d0"
+      ],
+      "llm_called": false,
+      "message": "Saved genuine proposals revalidated. Retailer requests use this real IRIS instance and synthetic stock."
+    },
+    "iris_version": "IRIS for UNIX (Ubuntu Server LTS for x86-64 Containers) 2027.1.0AI (Build 109U) Fri Oct 30 2026 16:31:24 EDT",
+    "backend": "intersystems-iris",
+    "api_key_absent": true,
+    "agent_mode": "disabled",
+    "expected_decisions_matched": 36,
+    "recorded_runs": 3,
+    "new_inferences": 0,
+    "results": {
+      "recall_sale": {
+        "idempotency_key": "recorded-check-67dda7931b5e43bcbe43f70142dc9e81-recall-sale",
+        "fingerprint": "5b5b64cca79234f6a7c3632e4fa69e758a304e4cccd2f83e527db5df05d3fb85",
+        "kind": "sale",
+        "lines": [
+          {
+            "lot_id": "DREO-start",
+            "quantity": 1
+          }
+        ],
+        "allowed": false,
+        "blocked": [
+          {
+            "lot_id": "DREO-start",
+            "status": "HOLD_RECALL",
+            "reasons": [
+              {
+                "notice_id": "US-CPSC:11038",
+                "reason": "The lot matches the DREO brand, model DR-HSH015, and manufactured month 2025-04 which falls within the recall scope."
+              }
+            ]
+          }
+        ],
+        "epoch": 1,
+        "at": "2026-11-04T12:20:31.338292+00:00",
+        "synthetic": true,
+        "replayed": false
+      },
+      "recall_shipment": {
+        "idempotency_key": "recorded-check-67dda7931b5e43bcbe43f70142dc9e81-recall-ship",
+        "fingerprint": "208d8d81ece0e616d172ef016b5749ac1ee0f75bc6233ee5b7b7ef099d5587c8",
+        "kind": "shipment",
+        "lines": [
+          {
+            "lot_id": "DREO-start",
+            "quantity": 1
+          }
+        ],
+        "allowed": false,
+        "blocked": [
+          {
+            "lot_id": "DREO-start",
+            "status": "HOLD_RECALL",
+            "reasons": [
+              {
+                "notice_id": "US-CPSC:11038",
+                "reason": "The lot matches the DREO brand, model DR-HSH015, and manufactured month 2025-04 which falls within the recall scope."
+              }
+            ]
+          }
+        ],
+        "epoch": 1,
+        "at": "2026-11-04T12:20:31.354178+00:00",
+        "synthetic": true,
+        "replayed": false
+      },
+      "unknown_date": {
+        "idempotency_key": "recorded-check-67dda7931b5e43bcbe43f70142dc9e81-unknown",
+        "fingerprint": "97865e15ca2a163da794647cf296926e76f49ff6914f521143a480146060c6fe",
+        "kind": "shipment",
+        "lines": [
+          {
+            "lot_id": "DREO-unknown",
+            "quantity": 1
+          }
+        ],
+        "allowed": false,
+        "blocked": [
+          {
+            "lot_id": "DREO-unknown",
+            "status": "HOLD_REVIEW",
+            "reasons": [
+              {
+                "notice_id": "US-CPSC:11038",
+                "reason": "The manufactured month is missing, making it impossible to verify whether the unit falls within the recall date range."
+              }
+            ]
+          }
+        ],
+        "epoch": 1,
+        "at": "2026-11-04T12:20:31.363147+00:00",
+        "synthetic": true,
+        "replayed": false
+      },
+      "mixed_order": {
+        "idempotency_key": "recorded-check-67dda7931b5e43bcbe43f70142dc9e81-mixed",
+        "fingerprint": "09e47e5c77e487f02215becf1a7ab9e7111678a7f290de0bfc7e661f2e31bdb4",
+        "kind": "shipment",
+        "lines": [
+          {
+            "lot_id": "DREO-before",
+            "quantity": 1
+          },
+          {
+            "lot_id": "DREO-end",
+            "quantity": 1
+          }
+        ],
+        "allowed": false,
+        "blocked": [
+          {
+            "lot_id": "DREO-end",
+            "status": "HOLD_RECALL",
+            "reasons": [
+              {
+                "notice_id": "US-CPSC:11038",
+                "reason": "The lot matches the DREO brand, model DR-HSH015, and manufactured month 2026-01 which falls within the recall scope."
+              }
+            ]
+          }
+        ],
+        "epoch": 1,
+        "at": "2026-11-04T12:20:31.374925+00:00",
+        "synthetic": true,
+        "replayed": false
+      },
+      "eligible_sale": {
+        "idempotency_key": "recorded-check-67dda7931b5e43bcbe43f70142dc9e81-eligible",
+        "fingerprint": "428b64edc6fb4602598d9b047e3950919b5efc1b67831687e80fa6a4be2e15c3",
+        "kind": "sale",
+        "lines": [
+          {
+            "lot_id": "DREO-before",
+            "quantity": 1
+          }
+        ],
+        "allowed": true,
+        "blocked": [],
+        "epoch": 1,
+        "at": "2026-11-04T12:20:31.382820+00:00",
+        "synthetic": true,
+        "replayed": false
+      },
+      "eligible_retry": {
+        "idempotency_key": "recorded-check-67dda7931b5e43bcbe43f70142dc9e81-eligible",
+        "fingerprint": "428b64edc6fb4602598d9b047e3950919b5efc1b67831687e80fa6a4be2e15c3",
+        "kind": "sale",
+        "lines": [
+          {
+            "lot_id": "DREO-before",
+            "quantity": 1
+          }
+        ],
+        "allowed": true,
+        "blocked": [],
+        "epoch": 1,
+        "at": "2026-11-04T12:20:31.382820+00:00",
+        "synthetic": true,
+        "replayed": true
+      }
+    },
+    "stock_before": {
+      "ANKER-model-unknown": 5,
+      "ANKER-unverified": 5,
+      "CONTROL-unrelated": 5,
+      "DREO-after": 5,
+      "DREO-before": 5,
+      "DREO-end": 5,
+      "DREO-inside": 5,
+      "DREO-start": 5,
+      "DREO-unknown": 5,
+      "HATCH-adapter": 5,
+      "HATCH-generation-2": 5,
+      "HATCH-unknown": 5
+    },
+    "stock_after": {
+      "ANKER-model-unknown": 5,
+      "ANKER-unverified": 5,
+      "CONTROL-unrelated": 5,
+      "DREO-after": 5,
+      "DREO-before": 4,
+      "DREO-end": 5,
+      "DREO-inside": 5,
+      "DREO-start": 5,
+      "DREO-unknown": 5,
+      "HATCH-adapter": 5,
+      "HATCH-generation-2": 5,
+      "HATCH-unknown": 5
+    },
+    "transaction_increase": 5,
+    "package_sha256": "90aa482beb7342759d4afeb382e6e22639cd2c6fe24a50694c96614e6b4bce62",
+    "finished_at_utc": "2026-11-04T12:20:31.411511+00:00"
+  },
+  "data_removal_refused": true,
+  "data_and_web_paths_unchanged": true,
+  "recorded_original_prompt_preserved": true,
+  "snapshot_archive_course": {
+    "preview_and_import": true,
+    "leading_zero_preserved": true,
+    "read_only_authority": true,
+    "quantity_unchanged": true,
+    "sale_api_rejected": true,
+    "new_inferences": 0,
+    "checkout_absent": true,
+    "python_files": 12
+  },
+  "feed_available_with_production_stopped": true,
+  "monitor_installed_default_off": true,
+  "snapshot_data_and_web_removal_guard": true,
+  "all_twelve_python_modules_match_source": true,
+  "finished_at_utc": "2026-11-04T12:21:56.355363+00:00",
+  "record_type": "Technical extract of an existing verification record; not a new inference."
+}

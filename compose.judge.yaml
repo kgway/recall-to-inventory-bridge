@@ -1,0 +1,9 @@
+# SPDX-License-Identifier: MPL-2.0
+# Combine with compose.yaml under a separate project; never reuse the live volume.
+services:
+  iris:
+    image: ${JUDGE_IMAGE:-recall-to-inventory-bridge-judge-109:local}
+    environment:
+      GEMINI_API_KEY: ""
+      AGENT_MODE: disabled
+      FREE_TIER_CONFIRMED: "false"

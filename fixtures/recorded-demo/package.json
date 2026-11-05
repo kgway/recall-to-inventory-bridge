@@ -1,0 +1,1421 @@
+{
+  "schema": 1,
+  "package_id": "cpsc-three-notice-v6-20261103",
+  "description": "Saved genuine AI Hub proposals and their exact input context. Loading revalidates evidence; it makes no inference. Inventory is synthetic.",
+  "prompt_version": "investigator-v6",
+  "policy_version": "evidence-v2",
+  "notices": [
+    {
+      "notice_id": "US-CPSC:10311",
+      "agency": "US-CPSC",
+      "jurisdiction": "US",
+      "target_component": null,
+      "source_id": "10311",
+      "recall_number": "25338",
+      "title": "More than One Million Anker Power Banks Recalled Due to Fire and Burn Hazards; Manufactured by Anker Innovations",
+      "url": "https://www.cpsc.gov/Recalls/2025/More-than-One-Million-Anker-Power-Banks-Recalled-Due-to-Fire-and-Burn-Hazards-Manufactured-by-Anker-Innovations",
+      "last_publish_date": "2025-06-12T00:00:00",
+      "acquired_at": "2026-11-02T16:20:07.110552+00:00",
+      "raw_api": {
+        "RecallID": 10311,
+        "RecallNumber": "25338",
+        "RecallDate": "2025-06-12T00:00:00",
+        "Description": "This recall involves Anker PowerCore 10000 power banks with model number A1263. The brand name \"Anker\" is engraved on the front of the product. The model number \"A1263\" and serial number \"SN\" are printed on the bottom. Only model number A1263 power banks sold in the U.S. with qualifying serial numbers are included in the recall. Consumers should check their serial number at https://www.anker.com/product-recalls to determine whether their power bank is included in the recall. Note: Do not throw this recalled lithium-ion battery or device in the trash, in the general recycling stream (e.g., street-level or curbside recycling bins), or in used battery recycling boxes found at various retail and home improvement stores. Recalled lithium-ion batteries must be disposed of differently than other batteries, because they present a greater risk of fire. Your municipal household hazardous waste (HHW) collection center may accept this recalled lithium-ion battery or device for disposal. Before taking your battery or device to a HHW collection center, contact it ahead of time and ask whether it accepts recalled lithium-ion batteries. If it does not, contact your municipality for further guidance.",
+        "URL": "https://www.cpsc.gov/Recalls/2025/More-than-One-Million-Anker-Power-Banks-Recalled-Due-to-Fire-and-Burn-Hazards-Manufactured-by-Anker-Innovations",
+        "Title": "More than One Million Anker Power Banks Recalled Due to Fire and Burn Hazards; Manufactured by Anker Innovations",
+        "ConsumerContact": "Anker toll-free at 800-988-7973 from 6 a.m. to 5 p.m. PT Monday through Friday, email at support@anker.com, or online at https://support.anker.com/s/emailcontactus. A Live Chat function is also available at https://support.anker.com/s/contact-us, or go to https://www.anker.com/product-recalls or www.anker.com and click on \"Product Recalls\" at the top of the page for more information.",
+        "LastPublishDate": "2025-06-12T00:00:00",
+        "Products": [
+          {
+            "Name": "Anker PowerCore 10000 power banks (model A1263 only)",
+            "Description": "",
+            "Model": "",
+            "Type": "",
+            "CategoryID": "",
+            "NumberOfUnits": "About 1,158,000"
+          }
+        ],
+        "Inconjunctions": [],
+        "Images": [
+          {
+            "URL": "https://www.cpsc.gov/s3fs-public/A1263-1.jpg",
+            "Caption": "Recalled Anker A1263 power bank"
+          }
+        ],
+        "Injuries": [
+          {
+            "Name": "Anker has received 19 reports of fires and explosions. This includes two reports of minor burn injuries not requiring medical attention and 11 reports of property damage totaling over $60,700."
+          }
+        ],
+        "Manufacturers": [
+          {
+            "Name": "Anker Innovations Limited, of China",
+            "CompanyID": ""
+          }
+        ],
+        "Retailers": [
+          {
+            "Name": "Online at Anker, Amazon, Newegg and Ebay from June 2016 through December 2022 for about $27.",
+            "CompanyID": ""
+          }
+        ],
+        "Importers": [],
+        "Distributors": [],
+        "SoldAtLabel": null,
+        "ManufacturerCountries": [
+          {
+            "Country": "China"
+          }
+        ],
+        "ProductUPCs": [],
+        "Hazards": [
+          {
+            "Name": "The lithium-ion battery in the power bank can overheat, posing fire and burn hazards to consumers.",
+            "HazardType": "",
+            "HazardTypeID": ""
+          }
+        ],
+        "Remedies": [
+          {
+            "Name": "Consumers should immediately stop using the recalled power banks and contact Anker Innovations for instructions on receiving a free replacement power bank. Visit https://www.anker.com/product-recalls to register for the recall. To receive a replacement, consumers will be required to submit a photo of their recalled power bank showing the model number, serial number, their name, the date of the photograph, and the word \"recalled\" written on the power bank in permanent marker. A purchase receipt will be requested but will not be required to participate in the recall. Consumers will also be required to confirm disposal of the power bank in accordance with applicable laws and regulations before receiving a replacement."
+          }
+        ],
+        "RemedyOptions": [
+          {
+            "Option": "Replace"
+          }
+        ]
+      },
+      "source_conflict": false,
+      "snapshots": [
+        {
+          "id": "api:10311:b078caa8b8bad701",
+          "kind": "cpsc-api",
+          "sha256": "b078caa8b8bad701cdb7a56bdddb1313aaa1f1934c347f84f63a4fa6127c2994",
+          "url": "https://www.saferproducts.gov/RestWebServices/Recall?format=json&RecallID=10311",
+          "text": "More than One Million Anker Power Banks Recalled Due to Fire and Burn Hazards; Manufactured by Anker Innovations\n\nThis recall involves Anker PowerCore 10000 power banks with model number A1263. The brand name \"Anker\" is engraved on the front of the product. The model number \"A1263\" and serial number \"SN\" are printed on the bottom. Only model number A1263 power banks sold in the U.S. with qualifying serial numbers are included in the recall. Consumers should check their serial number at https://www.anker.com/product-recalls to determine whether their power bank is included in the recall. Note: Do not throw this recalled lithium-ion battery or device in the trash, in the general recycling stream (e.g., street-level or curbside recycling bins), or in used battery recycling boxes found at various retail and home improvement stores. Recalled lithium-ion batteries must be disposed of differently than other batteries, because they present a greater risk of fire. Your municipal household hazardous waste (HHW) collection center may accept this recalled lithium-ion battery or device for disposal. Before taking your battery or device to a HHW collection center, contact it ahead of time and ask whether it accepts recalled lithium-ion batteries. If it does not, contact your municipality for further guidance.\n\nAnker PowerCore 10000 power banks (model A1263 only)\n\nThe lithium-ion battery in the power bank can overheat, posing fire and burn hazards to consumers.\n\nConsumers should immediately stop using the recalled power banks and contact Anker Innovations for instructions on receiving a free replacement power bank. Visit https://www.anker.com/product-recalls to register for the recall. To receive a replacement, consumers will be required to submit a photo of their recalled power bank showing the model number, serial number, their name, the date of the photograph, and the word \"recalled\" written on the power bank in permanent marker. A purchase receipt will be requested but will not be required to participate in the recall. Consumers will also be required to confirm disposal of the power bank in accordance with applicable laws and regulations before receiving a replacement."
+        },
+        {
+          "id": "page:10311:ba784b96ebd7123f",
+          "kind": "cpsc-detail",
+          "url": "https://www.cpsc.gov/Recalls/2025/More-than-One-Million-Anker-Power-Banks-Recalled-Due-to-Fire-and-Burn-Hazards-Manufactured-by-Anker-Innovations",
+          "sha256": "ba784b96ebd7123ff701d63f723c9ac52e8922b641731b938a8664732b97b4e2",
+          "raw_html_sha256": "874ef570b62e3eba7e069d8e9ca1fb4cf0ed290b9ef201f3fa8dc58ba924fdea",
+          "text": "More than One Million Anker Power Banks Recalled Due to Fire and Burn Hazards; Manufactured by Anker Innovations\nEnglish\nEspañol\nShare:\nShare it on Facebook\nShare it on Twitter\nCopy Link\nPrint Page\nCopy link\nRecalled Anker A1263 power bank\nName of Product:\nAnker PowerCore 10000 power banks (model A1263 only)\nHazard:\nThe lithium-ion battery in the power bank can overheat, posing fire and burn hazards to consumers.\nRemedy:\nReplace\nRecall Date:\nJune 12, 2025\nUnits:\nAbout 1,158,000\nConsumer Contact\nAnker toll-free at 800-988-7973 from 6 a.m. to 5 p.m. PT Monday through Friday, email at support@anker.com, or online at https://support.anker.com/s/emailcontactus. A Live Chat function is also available at https://support.anker.com/s/contact-us, or go to https://www.anker.com/product-recalls or www.anker.com and click on “Product Recalls” at the top of the page for more information.\nWebsiteE-mailPhone\nRecall Details\nDescription:\nThis recall involves Anker PowerCore 10000 power banks with model number A1263. The brand name “Anker” is engraved on the front of the product. The model number “A1263” and serial number “SN” are printed on the bottom. Only model number A1263 power banks sold in the U.S. with qualifying serial numbers are included in the recall. Consumers should check their serial number at https://www.anker.com/product-recalls to determine whether their power bank is included in the recall.\nNote: Do not throw this recalled lithium-ion battery or device in the trash, in the general recycling stream (e.g., street-level or curbside recycling bins), or in used battery recycling boxes found at various retail and home improvement stores. Recalled lithium-ion batteries must be disposed of differently than other batteries, because they present a greater risk of fire. Your municipal household hazardous waste (HHW) collection center may accept this recalled lithium-ion battery or device for disposal. Before taking your battery or device to a HHW collection center, contact it ahead of time and ask whether it accepts recalled lithium-ion batteries. If it does not, contact your municipality for further guidance.\nRemedy:\nConsumers should immediately stop using the recalled power banks and contact Anker Innovations for instructions on receiving a free replacement power bank. Visit https://www.anker.com/product-recalls to register for the recall. To receive a replacement, consumers will be required to submit a photo of their recalled power bank showing the model number, serial number, their name, the date of the photograph, and the word “recalled” written on the power bank in permanent marker. A purchase receipt will be requested but will not be required to participate in the recall. Consumers will also be required to confirm disposal of the power bank in accordance with applicable laws and regulations before receiving a replacement.\nIncidents/Injuries:\nAnker has received 19 reports of fires and explosions. This includes two reports of minor burn injuries not requiring medical attention and 11 reports of property damage totaling over $60,700.\nSold At:\nOnline at Anker, Amazon, Newegg and Ebay from June 2016 through December 2022 for about $27.\nManufacturer(s):\nAnker Innovations Limited, of China\nManufactured In:\nChina\nRecall number:\n25-338\nNote: Individual Commissioners may have statements related to this topic. Please visit www.cpsc.gov/commissioners to search for statements related to this or other topics.\nRecall Complaint\nIf you are experiencing issues with a recall remedy or believe a company is being non-responsive to your remedy request, please use this form and explain the situation to CPSC."
+        }
+      ]
+    },
+    {
+      "notice_id": "US-CPSC:11038",
+      "agency": "US-CPSC",
+      "jurisdiction": "US",
+      "target_component": null,
+      "source_id": "11038",
+      "recall_number": "27054",
+      "title": "DREO Recalls DR-HSH015 Space Heaters Due to Fire and Burn Hazards",
+      "url": "https://cpsc.gov/Recalls/2027/DREO-Recalls-DR-HSH015-Space-Heaters-Due-to-Fire-and-Burn-Hazards",
+      "last_publish_date": "2026-10-29T00:00:00",
+      "acquired_at": "2026-11-02T16:20:05.888980+00:00",
+      "raw_api": {
+        "RecallID": 11038,
+        "RecallNumber": "27054",
+        "RecallDate": "2026-10-29T00:00:00",
+        "Description": "This recall involves DREO space heaters, model number DR-HSH015. The ceramic, electric heaters are black and measure about 11.5 inches wide and 13 inches tall and include a remote control. Only units manufactured from April 2025 through January 2026 are included in this recall. The manufacture date, in YYYY/MM format, and the model number are printed on a label on the heater’s underside and “DREO” on the front of the unit. ",
+        "URL": "https://cpsc.gov/Recalls/2027/DREO-Recalls-DR-HSH015-Space-Heaters-Due-to-Fire-and-Burn-Hazards",
+        "Title": "DREO Recalls DR-HSH015 Space Heaters Due to Fire and Burn Hazards",
+        "ConsumerContact": "DREO toll-free at 833-820-0887 from 8:30 a.m. to 6 p.m. ET Monday through Friday, by email at spaceheater@realtimeresults.net, or online at www.dreo.com and click on “PRODUCT RECALLS” on the top of the page, or www.recallrtr.com/spaceheater for more information.",
+        "LastPublishDate": "2026-10-29T00:00:00",
+        "Products": [
+          {
+            "Name": "DREO Space Heaters, model DR-HSH015",
+            "Description": "",
+            "Model": "",
+            "Type": "Electric Space Heaters,not Otherwise Specified",
+            "CategoryID": "987",
+            "NumberOfUnits": "About 338,800 (In addition, about 36,300 were sold in Canada)"
+          }
+        ],
+        "Inconjunctions": [],
+        "Images": [
+          {
+            "URL": "https://cpsc.gov/s3fs-public/DREO1.png?VersionId=37rR7xQxj_D2T3WYYPVS6bf6pWt6LZqC",
+            "Caption": "Recalled DREO Space Heater - model DR-HSH015"
+          },
+          {
+            "URL": "https://cpsc.gov/s3fs-public/DREO2.jpg?VersionId=XQ9PGzTKG443Y4cwtuigpQ93h0DOrv6B",
+            "Caption": "The manufacture date, in YYYY/MM format, and model “DR-HSH015” are printed on a label on the underside of the recalled DREO space heaters."
+          }
+        ],
+        "Injuries": [
+          {
+            "Name": "DREO has received 17 reports of space heaters igniting, three resulting in property damage and one in a burn injury to the hand."
+          }
+        ],
+        "Manufacturers": [],
+        "Retailers": [
+          {
+            "Name": "Sold At:\nCostco stores nationwide and online at Dreo.com, BestBuy.com, Kohls.com, Lowes.com, QVC.com, HomeDepot.com, B2BRenew.com and Costco.com from September 2025 through October 2026 for between $70 and $110.",
+            "CompanyID": ""
+          }
+        ],
+        "Importers": [
+          {
+            "Name": "Hesung Innovation Corp, dba DREO, of Clifton, New Jerse",
+            "CompanyID": ""
+          }
+        ],
+        "Distributors": [],
+        "SoldAtLabel": null,
+        "ManufacturerCountries": [
+          {
+            "Country": "Vietnam"
+          }
+        ],
+        "ProductUPCs": [],
+        "Hazards": [
+          {
+            "Name": "The recalled space heaters can overheat and ignite, posing fire and burn hazards.",
+            "HazardType": "",
+            "HazardTypeID": ""
+          }
+        ],
+        "Remedies": [
+          {
+            "Name": "Consumers should stop using the recalled space heaters immediately and contact DREO for a free replacement space heater. Consumers will be asked to unplug the space heater, destroy it by cutting the electrical cord and follow instructions to send a photo of the destroyed heater."
+          }
+        ],
+        "RemedyOptions": [
+          {
+            "Option": "Replace"
+          }
+        ]
+      },
+      "source_conflict": false,
+      "snapshots": [
+        {
+          "id": "api:11038:07bbeee84b07b73a",
+          "kind": "cpsc-api",
+          "sha256": "07bbeee84b07b73a5116dabde96051207dcfee3cf7601c0eeef95607521a14ba",
+          "url": "https://www.saferproducts.gov/RestWebServices/Recall?format=json&RecallID=11038",
+          "text": "DREO Recalls DR-HSH015 Space Heaters Due to Fire and Burn Hazards\n\nThis recall involves DREO space heaters, model number DR-HSH015. The ceramic, electric heaters are black and measure about 11.5 inches wide and 13 inches tall and include a remote control. Only units manufactured from April 2025 through January 2026 are included in this recall. The manufacture date, in YYYY/MM format, and the model number are printed on a label on the heater’s underside and “DREO” on the front of the unit. \n\nDREO Space Heaters, model DR-HSH015\n\nThe recalled space heaters can overheat and ignite, posing fire and burn hazards.\n\nConsumers should stop using the recalled space heaters immediately and contact DREO for a free replacement space heater. Consumers will be asked to unplug the space heater, destroy it by cutting the electrical cord and follow instructions to send a photo of the destroyed heater."
+        },
+        {
+          "id": "page:11038:c5ce6414accf6ae4",
+          "kind": "cpsc-detail",
+          "url": "https://cpsc.gov/Recalls/2027/DREO-Recalls-DR-HSH015-Space-Heaters-Due-to-Fire-and-Burn-Hazards",
+          "sha256": "c5ce6414accf6ae4cbb3ecc0df277705eb872b1ccdf3df003a8bde511ca68ee7",
+          "raw_html_sha256": "be1efa1fae2b0c4ea7f04b095e3365afd29137fa6b6c328d8e2cd990efa44a1a",
+          "text": "DREO Recalls DR-HSH015 Space Heaters Due to Fire and Burn Hazards\nShare:\nShare it on Facebook\nShare it on Twitter\nCopy Link\nPrint Page\nCopy link\nRecalled DREO Space Heater - model DR-HSH015\nThe manufacture date, in YYYY/MM format, and model “DR-HSH015” are printed on a label on the underside of the recalled DREO space heaters.\nThe manufacture date, in YYYY/MM format, and model “DR-HSH015” are printed on a label on the underside of the recalled DREO space heaters (Close-up).\nName of Product:\nDREO Space Heaters, model DR-HSH015\nHazard:\nThe recalled space heaters can overheat and ignite, posing fire and burn hazards.\nRemedy:\nReplace\nRecall Date:\nOctober 29, 2026\nUnits:\nAbout 338,800 (In addition, about 36,300 were sold in Canada)\nConsumer Contact\nDREO toll-free at 833-820-0887 from 8:30 a.m. to 6 p.m. ET Monday through Friday, by email at spaceheater@realtimeresults.net, or online at www.dreo.com and click on “PRODUCT RECALLS” on the top of the page, or www.recallrtr.com/spaceheater for more information.\nWebsiteE-mailPhone\nRecall Details\nDescription:\nThis recall involves DREO space heaters, model number DR-HSH015. The ceramic, electric heaters are black and measure about 11.5 inches wide and 13 inches tall and include a remote control. Only units manufactured from April 2025 through January 2026 are included in this recall. The manufacture date, in YYYY/MM format, and the model number are printed on a label on the heater’s underside and “DREO” on the front of the unit.\nRemedy:\nConsumers should stop using the recalled space heaters immediately and contact DREO for a free replacement space heater. Consumers will be asked to unplug the space heater, destroy it by cutting the electrical cord and follow instructions to send a photo of the destroyed heater.\nIncidents/Injuries:\nDREO has received 17 reports of space heaters igniting, three resulting in property damage and one in a burn injury to the hand.\nSold At:\nCostco stores nationwide and online at Dreo.com, BestBuy.com, Kohls.com, Lowes.com, QVC.com, HomeDepot.com, B2BRenew.com and Costco.com from September 2025 through October 2026 for between $70 and $110.\nImporter(s):\nHesung Innovation Corp, dba DREO, of Clifton, New Jersey\nManufactured In:\nVietnam\nRecall number:\n27-054"
+        }
+      ]
+    },
+    {
+      "notice_id": "US-CPSC:9996",
+      "agency": "US-CPSC",
+      "jurisdiction": "US",
+      "target_component": "power_adapter",
+      "source_id": "9996",
+      "recall_number": "24291",
+      "title": "Hatch Baby Recalls Power Adapters Sold with Rest 1st Generation Sound Machines Due to Shock Hazard",
+      "url": "https://www.cpsc.gov/Recalls/2024/Hatch-Baby-Recalls-Power-Adapters-Sold-with-Rest-1st-Generation-Sound-Machines-Due-to-Shock-Hazard",
+      "last_publish_date": "2024-07-03T00:00:00",
+      "acquired_at": "2026-11-02T16:20:06.495893+00:00",
+      "raw_api": {
+        "RecallID": 9996,
+        "RecallNumber": "24291",
+        "RecallDate": "2024-07-03T00:00:00",
+        "Description": "This recall involves AC power adapters sold with some units of the Rest 1st Generation Sound Machine. The power adapters have model number CYAP05 050100U. The adapters have a white rectangular plastic housing that plugs directly into the wall socket. The model number, amps (\"1.0A\"), \"Jiangsu Chenyang Electron Co. LTD\", and \"Made in China\" are printed in black near the prongs on the power adapter. The power adapter was not sold separately.",
+        "URL": "https://www.cpsc.gov/Recalls/2024/Hatch-Baby-Recalls-Power-Adapters-Sold-with-Rest-1st-Generation-Sound-Machines-Due-to-Shock-Hazard",
+        "Title": "Hatch Baby Recalls Power Adapters Sold with Rest 1st Generation Sound Machines Due to Shock Hazard",
+        "ConsumerContact": "Hatch Baby Inc. toll-free at 888-918-4614 from 9 a.m. to 5 p.m. PT Monday through Friday, by email at recall@hatch.co, or online at www.hatch.co/adapterrecall or www.hatch.co and click on \"Recall\" at the bottom of the page for more information.",
+        "LastPublishDate": "2024-07-03T00:00:00",
+        "Products": [
+          {
+            "Name": "Power Adapters sold with Rest 1st Generation sound machines",
+            "Description": "",
+            "Model": "",
+            "Type": "",
+            "CategoryID": "",
+            "NumberOfUnits": "About 919,400 (In addition, about 44,352 were sold in Canada)"
+          }
+        ],
+        "Inconjunctions": [],
+        "Images": [
+          {
+            "URL": "https://www.cpsc.gov/s3fs-public/Rest1st-0.png",
+            "Caption": "Rest 1st Generation Sound Machine sold with recalled Power Adapter"
+          },
+          {
+            "URL": "https://www.cpsc.gov/s3fs-public/Rest1st-1.png",
+            "Caption": "Recalled Power Adapter for Rest 1st Generation Sound Machines"
+          },
+          {
+            "URL": "https://www.cpsc.gov/s3fs-public/Rest1st-2.png",
+            "Caption": "Location of model number on recalled adapter"
+          }
+        ],
+        "Injuries": [
+          {
+            "Name": "The firm has received 19 reports of the plastic housing surrounding the AC power adapter coming off, including two reports of consumers who experienced a minor electrical shock."
+          }
+        ],
+        "Manufacturers": [],
+        "Retailers": [
+          {
+            "Name": "Online at Hatch.co and Amazon.com, and at BuyBuyBaby, Target, Walmart, Nordstrom, Pottery Barn Kids and BestBuy stores nationwide from January 2019 through September 2022 for between $60 and $70 with certain Rest 1st Generation sound machines, and on Amazon.com from January 2019 through May 2024 for between $60 and $200 with certain Rest 1st Generation sound machines.",
+            "CompanyID": ""
+          }
+        ],
+        "Importers": [
+          {
+            "Name": "Hatch Baby Inc., of Palo Alto, California",
+            "CompanyID": ""
+          }
+        ],
+        "Distributors": [],
+        "SoldAtLabel": null,
+        "ManufacturerCountries": [
+          {
+            "Country": "China"
+          }
+        ],
+        "ProductUPCs": [],
+        "Hazards": [
+          {
+            "Name": "The plastic housing surrounding the AC power adapter supplied with some Rest 1st Generation sound machines can come off when removing the adapter from the power outlet, leaving the power prongs exposed and posing a shock hazard to consumers.",
+            "HazardType": "",
+            "HazardTypeID": ""
+          }
+        ],
+        "Remedies": [
+          {
+            "Name": "Consumers should immediately stop using the recalled power adapters sold with Rest 1st Generation sound machines, and contact Hatch for a free replacement power adapter. Consumers should unplug the cord, cut the cord on the recalled power adapter, take a photo of the adapter showing the model number and the cut cord, upload the photo, and provide their name and mailing address at www.hatch.co/adapterrecall. Hatch is contacting all registered owners directly."
+          }
+        ],
+        "RemedyOptions": [
+          {
+            "Option": "Replace"
+          }
+        ]
+      },
+      "source_conflict": true,
+      "snapshots": [
+        {
+          "id": "api:9996:63f783cce8e68e18",
+          "kind": "cpsc-api",
+          "sha256": "63f783cce8e68e18431fdaa065b9cbfe6f052359385982280326a5c71a807993",
+          "url": "https://www.saferproducts.gov/RestWebServices/Recall?format=json&RecallID=9996",
+          "text": "Hatch Baby Recalls Power Adapters Sold with Rest 1st Generation Sound Machines Due to Shock Hazard\n\nThis recall involves AC power adapters sold with some units of the Rest 1st Generation Sound Machine. The power adapters have model number CYAP05 050100U. The adapters have a white rectangular plastic housing that plugs directly into the wall socket. The model number, amps (\"1.0A\"), \"Jiangsu Chenyang Electron Co. LTD\", and \"Made in China\" are printed in black near the prongs on the power adapter. The power adapter was not sold separately.\n\nPower Adapters sold with Rest 1st Generation sound machines\n\nThe plastic housing surrounding the AC power adapter supplied with some Rest 1st Generation sound machines can come off when removing the adapter from the power outlet, leaving the power prongs exposed and posing a shock hazard to consumers.\n\nConsumers should immediately stop using the recalled power adapters sold with Rest 1st Generation sound machines, and contact Hatch for a free replacement power adapter. Consumers should unplug the cord, cut the cord on the recalled power adapter, take a photo of the adapter showing the model number and the cut cord, upload the photo, and provide their name and mailing address at www.hatch.co/adapterrecall. Hatch is contacting all registered owners directly."
+        },
+        {
+          "id": "page:9996:57f96db66f3bb45e",
+          "kind": "cpsc-detail",
+          "url": "https://www.cpsc.gov/Recalls/2024/Hatch-Baby-Recalls-Power-Adapters-Sold-with-Rest-1st-Generation-Sound-Machines-Due-to-Shock-Hazard",
+          "sha256": "57f96db66f3bb45e1e142b8621d57aa4adbe148875aacf63f3b41d96d21ddd90",
+          "raw_html_sha256": "2a97cde6de6efc26b4693cf1ded20a0979112237cc8bfa2d8feca932c2702d5f",
+          "text": "Hatch Baby Recalls Power Adapters Sold with Rest 1st Generation Sound Machines Due to Shock Hazard\nEnglish\n简体中文\n繁體中文\nEspañol\nShare:\nShare it on Facebook\nShare it on Twitter\nCopy Link\nPrint Page\nCopy link\nRest 1st Generation Sound Machine sold with recalled Power Adapter\nRecalled Power Adapter for Rest 1st Generation Sound Machines\nRecalled Adapter without Date Code Compared to Non-Recalled Adapter with Date Code\nLocation of model number on recalled adapter\nName of Product:\nPower Adapters sold with Rest 1st Generation sound machines\nHazard:\nThe plastic housing surrounding the AC power adapter supplied with some Rest 1st Generation sound machines can come off when removing the adapter from the power outlet, leaving the power prongs exposed and posing a shock hazard to consumers.\nRemedy:\nReplace\nRecall Date:\nJuly 03, 2024\nUnits:\nAbout 919,400 (In addition, about 44,352 were sold in Canada)\nConsumer Contact\nHatch Baby Inc. toll-free at 888-918-4614 from 9 a.m. to 5 p.m. PT Monday through Friday, by email at recall@hatch.co, or online at www.hatch.co/adapterrecall or www.hatch.co and click on “Recall” at the bottom of the page for more information.\nWebsiteE-mailPhone\nRecall Details\nIn Conjunction With:\ncanada Flag\nDescription:\nThis recall involves AC power adapters sold with some units of the Rest 1st Generation Sound Machine. The power adapters have model number CYAP05 050100U. The adapters have a white rectangular plastic housing that plugs directly into the wall socket. The model number, amps (“1.0A”), “Jiangsu Chenyang Electron Co. LTD”, and “Made in China” are printed in black near the prongs on the power adapter. The power adapter was not sold separately.\nRemedy:\nConsumers should immediately stop using the recalled power adapters sold with Rest 1st Generation sound machines and contact Hatch for a free replacement power adapter. Rest 2nd Generation sound machines are not affected by this recall. Consumers should look at the power adapter for the affected model number, ensure that the adapter does not have a four digit date code located under the “Made in China” print, unplug the adapter, cut the cord on the recalled power adapter, take a photo of the adapter showing the model number and all printed information on the adapter, and the cut cord, upload the photo and provide their name and mailing address at www.hatch.co/adapterrecall. Hatch is contacting all registered owners directly.\nIncidents/Injuries:\nThe firm has received 19 reports of the plastic housing surrounding the AC power adapter coming off, including two reports of consumers who experienced a minor electrical shock.\nSold At:\nOnline at Hatch.co and Amazon.com, and at BuyBuyBaby, Target, Walmart, Nordstrom, Pottery Barn Kids and BestBuy stores nationwide from January 2019 through September 2022 for between $60 and $70 with certain Rest 1st Generation sound machines, and on Amazon.com from January 2019 through May 2024 for between $60 and $200 with certain Rest 1st Generation sound machines.\nImporter(s):\nHatch Baby Inc., of Palo Alto, California\nManufactured In:\nChina\nRecall number:\n24-291\nFast Track Recall\nNote: Individual Commissioners may have statements related to this topic. Please visit www.cpsc.gov/commissioners to search for statements related to this or other topics.\nRecall Complaint\nIf you are experiencing issues with a recall remedy or believe a company is being non-responsive to your remedy request, please use this form and explain the situation to CPSC."
+        }
+      ]
+    }
+  ],
+  "lots": [
+    {
+      "lot_id": "DREO-start",
+      "sku": "DEMO-HEATER",
+      "name": "DREO space heater",
+      "brand": "DREO",
+      "model": "DR-HSH015",
+      "manufactured_month": "2025-04",
+      "quantity": 5,
+      "synthetic": true
+    },
+    {
+      "lot_id": "DREO-inside",
+      "sku": "DEMO-HEATER",
+      "name": "DREO space heater",
+      "brand": "DREO",
+      "model": "DR-HSH015",
+      "manufactured_month": "2025-10",
+      "quantity": 5,
+      "synthetic": true
+    },
+    {
+      "lot_id": "DREO-end",
+      "sku": "DEMO-HEATER",
+      "name": "DREO space heater",
+      "brand": "DREO",
+      "model": "DR-HSH015",
+      "manufactured_month": "2026-01",
+      "quantity": 5,
+      "synthetic": true
+    },
+    {
+      "lot_id": "DREO-before",
+      "sku": "DEMO-HEATER",
+      "name": "DREO space heater",
+      "brand": "DREO",
+      "model": "DR-HSH015",
+      "manufactured_month": "2025-03",
+      "quantity": 5,
+      "synthetic": true
+    },
+    {
+      "lot_id": "DREO-after",
+      "sku": "DEMO-HEATER",
+      "name": "DREO space heater",
+      "brand": "DREO",
+      "model": "DR-HSH015",
+      "manufactured_month": "2026-02",
+      "quantity": 5,
+      "synthetic": true
+    },
+    {
+      "lot_id": "DREO-unknown",
+      "sku": "DEMO-HEATER",
+      "name": "DREO space heater",
+      "brand": "DREO",
+      "model": "DR-HSH015",
+      "manufactured_month": null,
+      "quantity": 5,
+      "synthetic": true
+    },
+    {
+      "lot_id": "HATCH-unknown",
+      "sku": "DEMO-SOUND-1",
+      "name": "Hatch Rest sound machine",
+      "brand": "Hatch",
+      "model": "Rest",
+      "manufactured_month": null,
+      "quantity": 5,
+      "synthetic": true,
+      "generation": "1",
+      "adapter_model": null
+    },
+    {
+      "lot_id": "HATCH-adapter",
+      "sku": "DEMO-SOUND-1",
+      "name": "Hatch Rest with adapter",
+      "brand": "Hatch",
+      "model": "Rest",
+      "manufactured_month": null,
+      "quantity": 5,
+      "synthetic": true,
+      "generation": "1",
+      "adapter_model": "CYAP05 050100U"
+    },
+    {
+      "lot_id": "HATCH-generation-2",
+      "sku": "DEMO-SOUND-2",
+      "name": "Hatch Rest second generation",
+      "brand": "Hatch",
+      "model": "Rest",
+      "manufactured_month": null,
+      "quantity": 5,
+      "synthetic": true,
+      "generation": "2",
+      "adapter_model": null
+    },
+    {
+      "lot_id": "ANKER-unverified",
+      "sku": "DEMO-POWER",
+      "name": "Anker PowerCore 10000",
+      "brand": "Anker",
+      "model": "A1263",
+      "manufactured_month": null,
+      "quantity": 5,
+      "synthetic": true,
+      "serial_verification": "unknown"
+    },
+    {
+      "lot_id": "ANKER-model-unknown",
+      "sku": "DEMO-POWER-UNKNOWN",
+      "name": "Anker power bank",
+      "brand": "Anker",
+      "model": null,
+      "manufactured_month": null,
+      "quantity": 5,
+      "synthetic": true,
+      "serial_verification": "unknown"
+    },
+    {
+      "lot_id": "CONTROL-unrelated",
+      "sku": "DEMO-LAMP",
+      "name": "Synthetic unrelated desk lamp",
+      "brand": "DemoCo",
+      "model": "LAMP-ONLY-01",
+      "manufactured_month": null,
+      "quantity": 5,
+      "synthetic": true
+    }
+  ],
+  "investigations": [
+    {
+      "original_run": {
+        "run_id": "d43ba2d4f96249828319b97a43cb60bc",
+        "notice_id": "US-CPSC:11038",
+        "notice_version": "c823e2e31589838c501d2425749be242baa57d284b22cf4d0264d5bc26986f51",
+        "lot_versions": {
+          "ANKER-model-unknown": "ddf93b9fe869ef97cad6cefa433dfb3aa8eb468e2d8d804c11cfefd3fa177126",
+          "ANKER-unverified": "188dad1c032f7466b30b592d0067387d00fd5416a368373a38ca3381f085cfa4",
+          "CONTROL-unrelated": "6e7ce90f928256e684e9504d8c94d31ae55560fb12f0c2c2abd9b01685ea212d",
+          "DREO-after": "c11db1800aa2f8e6f76f786c1d0df16d617b40a2fb1e4d0dbab9477ec0a19849",
+          "DREO-before": "ad40d0fcd676ea39f78828ad7046b48dc1f449a47710cad80b9d7264335b0856",
+          "DREO-end": "384f7c70b1e0fb7733df44b5f8039694beaa10a21a89323bbbf099b28a3d6e33",
+          "DREO-inside": "e4e8090c28d65d484279e4525b8c0b50aff78cc29c9e96ea08829f1e0d4f704a",
+          "DREO-start": "561d78c6933159ff22e047542c11e09a36520d80dd2625af4bc9d977f503e926",
+          "DREO-unknown": "1ae767499c993ece2dd1fd33e4560f944ce666d13910e48a1a79aca9a925b41a",
+          "HATCH-adapter": "d87bdd554cc77122e3dec14d8b40d529624ad7ec3a43200705d7a063e6e00c17",
+          "HATCH-generation-2": "0cef14e25e79fa883e248a7a721d359fc1c7e42476a8864db0023897b638f31e",
+          "HATCH-unknown": "7f0c4d8c4f16f9222966232ce39ae4a4af42edb29093fcb1c614f072ae2d4977"
+        },
+        "created_at": "2026-11-03T06:34:27.934967+00:00",
+        "status": "COMPLETED",
+        "mode": "live",
+        "provider": "gemini",
+        "model": "gemini-3.5-flash-lite",
+        "prompt_version": "investigator-v6",
+        "policy_version": "evidence-v2",
+        "tool_calls": [
+          {
+            "name": "ReadContext",
+            "at": "2026-11-03T06:34:32.532061+00:00",
+            "arguments": {},
+            "result_sha256": "2929b28bfed9954720cec1c3822eda5a9468a14672cabf853d95194346293237"
+          }
+        ],
+        "usage": {
+          "completion_tokens": 3464,
+          "prompt_tokens": 4011,
+          "total_tokens": 7475
+        },
+        "submitted_at": "2026-11-03T06:34:39.841855+00:00",
+        "validation": {
+          "at": "2026-11-03T06:34:39.841861+00:00",
+          "assessment_count": 12,
+          "input_format_version": "assessment-input-v1",
+          "revision": 1
+        },
+        "finished_at": "2026-11-03T06:34:39.843451+00:00"
+      },
+      "proposals": [
+        {
+          "lot_id": "DREO-inside",
+          "decision": "MATCH_RECALL",
+          "reason": "The lot matches the DREO brand, model DR-HSH015, and manufactured month 2025-10 which falls within the recall scope.",
+          "checks": [
+            {
+              "field": "brand",
+              "operator": "equals",
+              "value": "DREO",
+              "evidence": {
+                "snapshot_id": "api:11038:07bbeee84b07b73a",
+                "quote": "This recall involves DREO space heaters, model number DR-HSH015."
+              }
+            },
+            {
+              "field": "model",
+              "operator": "equals",
+              "value": "DR-HSH015",
+              "evidence": {
+                "snapshot_id": "api:11038:07bbeee84b07b73a",
+                "quote": "This recall involves DREO space heaters, model number DR-HSH015."
+              }
+            },
+            {
+              "field": "manufactured_month",
+              "operator": "between_inclusive",
+              "value": [
+                "2025-04",
+                "2026-01"
+              ],
+              "evidence": {
+                "snapshot_id": "api:11038:07bbeee84b07b73a",
+                "quote": "Only units manufactured from April 2025 through January 2026 are included in this recall."
+              }
+            }
+          ],
+          "missing_fields": []
+        },
+        {
+          "lot_id": "HATCH-unknown",
+          "decision": "NO_MATCH_FOR_NOTICE",
+          "reason": "The lot brand Hatch does not match the recalled brand DREO.",
+          "checks": [
+            {
+              "field": "brand",
+              "operator": "equals",
+              "value": "DREO",
+              "evidence": {
+                "snapshot_id": "api:11038:07bbeee84b07b73a",
+                "quote": "This recall involves DREO space heaters, model number DR-HSH015."
+              }
+            }
+          ],
+          "missing_fields": []
+        },
+        {
+          "lot_id": "DREO-unknown",
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "reason": "The manufactured month is missing, making it impossible to verify whether the unit falls within the recall date range.",
+          "checks": [
+            {
+              "field": "brand",
+              "operator": "equals",
+              "value": "DREO",
+              "evidence": {
+                "snapshot_id": "api:11038:07bbeee84b07b73a",
+                "quote": "This recall involves DREO space heaters, model number DR-HSH015."
+              }
+            },
+            {
+              "field": "model",
+              "operator": "equals",
+              "value": "DR-HSH015",
+              "evidence": {
+                "snapshot_id": "api:11038:07bbeee84b07b73a",
+                "quote": "This recall involves DREO space heaters, model number DR-HSH015."
+              }
+            }
+          ],
+          "missing_fields": [
+            "manufactured_month"
+          ]
+        },
+        {
+          "lot_id": "HATCH-adapter",
+          "decision": "NO_MATCH_FOR_NOTICE",
+          "reason": "The lot brand Hatch does not match the recalled brand DREO.",
+          "checks": [
+            {
+              "field": "brand",
+              "operator": "equals",
+              "value": "DREO",
+              "evidence": {
+                "snapshot_id": "api:11038:07bbeee84b07b73a",
+                "quote": "This recall involves DREO space heaters, model number DR-HSH015."
+              }
+            }
+          ],
+          "missing_fields": []
+        },
+        {
+          "lot_id": "DREO-before",
+          "decision": "NO_MATCH_FOR_NOTICE",
+          "reason": "The manufactured month 2025-03 is outside the recalled range of April 2025 through January 2026.",
+          "checks": [
+            {
+              "field": "brand",
+              "operator": "equals",
+              "value": "DREO",
+              "evidence": {
+                "snapshot_id": "api:11038:07bbeee84b07b73a",
+                "quote": "This recall involves DREO space heaters, model number DR-HSH015."
+              }
+            },
+            {
+              "field": "model",
+              "operator": "equals",
+              "value": "DR-HSH015",
+              "evidence": {
+                "snapshot_id": "api:11038:07bbeee84b07b73a",
+                "quote": "This recall involves DREO space heaters, model number DR-HSH015."
+              }
+            },
+            {
+              "field": "manufactured_month",
+              "operator": "between_inclusive",
+              "value": [
+                "2025-04",
+                "2026-01"
+              ],
+              "evidence": {
+                "snapshot_id": "api:11038:07bbeee84b07b73a",
+                "quote": "Only units manufactured from April 2025 through January 2026 are included in this recall."
+              }
+            }
+          ],
+          "missing_fields": []
+        },
+        {
+          "lot_id": "ANKER-unverified",
+          "decision": "NO_MATCH_FOR_NOTICE",
+          "reason": "The lot brand Anker and model A1263 do not match the recalled brand DREO and model DR-HSH015.",
+          "checks": [
+            {
+              "field": "brand",
+              "operator": "equals",
+              "value": "DREO",
+              "evidence": {
+                "snapshot_id": "api:11038:07bbeee84b07b73a",
+                "quote": "This recall involves DREO space heaters, model number DR-HSH015."
+              }
+            },
+            {
+              "field": "model",
+              "operator": "equals",
+              "value": "DR-HSH015",
+              "evidence": {
+                "snapshot_id": "api:11038:07bbeee84b07b73a",
+                "quote": "This recall involves DREO space heaters, model number DR-HSH015."
+              }
+            }
+          ],
+          "missing_fields": []
+        },
+        {
+          "lot_id": "HATCH-generation-2",
+          "decision": "NO_MATCH_FOR_NOTICE",
+          "reason": "The lot brand Hatch does not match the recalled brand DREO.",
+          "checks": [
+            {
+              "field": "brand",
+              "operator": "equals",
+              "value": "DREO",
+              "evidence": {
+                "snapshot_id": "api:11038:07bbeee84b07b73a",
+                "quote": "This recall involves DREO space heaters, model number DR-HSH015."
+              }
+            }
+          ],
+          "missing_fields": []
+        },
+        {
+          "lot_id": "ANKER-model-unknown",
+          "decision": "NO_MATCH_FOR_NOTICE",
+          "reason": "The lot brand Anker does not match the recalled brand DREO.",
+          "checks": [
+            {
+              "field": "brand",
+              "operator": "equals",
+              "value": "DREO",
+              "evidence": {
+                "snapshot_id": "api:11038:07bbeee84b07b73a",
+                "quote": "This recall involves DREO space heaters, model number DR-HSH015."
+              }
+            }
+          ],
+          "missing_fields": []
+        },
+        {
+          "lot_id": "DREO-end",
+          "decision": "MATCH_RECALL",
+          "reason": "The lot matches the DREO brand, model DR-HSH015, and manufactured month 2026-01 which falls within the recall scope.",
+          "checks": [
+            {
+              "field": "brand",
+              "operator": "equals",
+              "value": "DREO",
+              "evidence": {
+                "snapshot_id": "api:11038:07bbeee84b07b73a",
+                "quote": "This recall involves DREO space heaters, model number DR-HSH015."
+              }
+            },
+            {
+              "field": "model",
+              "operator": "equals",
+              "value": "DR-HSH015",
+              "evidence": {
+                "snapshot_id": "api:11038:07bbeee84b07b73a",
+                "quote": "This recall involves DREO space heaters, model number DR-HSH015."
+              }
+            },
+            {
+              "field": "manufactured_month",
+              "operator": "between_inclusive",
+              "value": [
+                "2025-04",
+                "2026-01"
+              ],
+              "evidence": {
+                "snapshot_id": "api:11038:07bbeee84b07b73a",
+                "quote": "Only units manufactured from April 2025 through January 2026 are included in this recall."
+              }
+            }
+          ],
+          "missing_fields": []
+        },
+        {
+          "lot_id": "DREO-start",
+          "decision": "MATCH_RECALL",
+          "reason": "The lot matches the DREO brand, model DR-HSH015, and manufactured month 2025-04 which falls within the recall scope.",
+          "checks": [
+            {
+              "field": "brand",
+              "operator": "equals",
+              "value": "DREO",
+              "evidence": {
+                "snapshot_id": "api:11038:07bbeee84b07b73a",
+                "quote": "This recall involves DREO space heaters, model number DR-HSH015."
+              }
+            },
+            {
+              "field": "model",
+              "operator": "equals",
+              "value": "DR-HSH015",
+              "evidence": {
+                "snapshot_id": "api:11038:07bbeee84b07b73a",
+                "quote": "This recall involves DREO space heaters, model number DR-HSH015."
+              }
+            },
+            {
+              "field": "manufactured_month",
+              "operator": "between_inclusive",
+              "value": [
+                "2025-04",
+                "2026-01"
+              ],
+              "evidence": {
+                "snapshot_id": "api:11038:07bbeee84b07b73a",
+                "quote": "Only units manufactured from April 2025 through January 2026 are included in this recall."
+              }
+            }
+          ],
+          "missing_fields": []
+        },
+        {
+          "lot_id": "DREO-after",
+          "decision": "NO_MATCH_FOR_NOTICE",
+          "reason": "The manufactured month 2026-02 is outside the recalled range of April 2025 through January 2026.",
+          "checks": [
+            {
+              "field": "brand",
+              "operator": "equals",
+              "value": "DREO",
+              "evidence": {
+                "snapshot_id": "api:11038:07bbeee84b07b73a",
+                "quote": "This recall involves DREO space heaters, model number DR-HSH015."
+              }
+            },
+            {
+              "field": "model",
+              "operator": "equals",
+              "value": "DR-HSH015",
+              "evidence": {
+                "snapshot_id": "api:11038:07bbeee84b07b73a",
+                "quote": "This recall involves DREO space heaters, model number DR-HSH015."
+              }
+            },
+            {
+              "field": "manufactured_month",
+              "operator": "between_inclusive",
+              "value": [
+                "2025-04",
+                "2026-01"
+              ],
+              "evidence": {
+                "snapshot_id": "api:11038:07bbeee84b07b73a",
+                "quote": "Only units manufactured from April 2025 through January 2026 are included in this recall."
+              }
+            }
+          ],
+          "missing_fields": []
+        },
+        {
+          "lot_id": "CONTROL-unrelated",
+          "decision": "NO_MATCH_FOR_NOTICE",
+          "reason": "The lot brand DemoCo does not match the recalled brand DREO.",
+          "checks": [
+            {
+              "field": "brand",
+              "operator": "equals",
+              "value": "DREO",
+              "evidence": {
+                "snapshot_id": "api:11038:07bbeee84b07b73a",
+                "quote": "This recall involves DREO space heaters, model number DR-HSH015."
+              }
+            }
+          ],
+          "missing_fields": []
+        }
+      ],
+      "evidence_file": "research/evidence/iris-aihub-dreo-v6.json",
+      "evidence_sha256": "c0d5f8d7d5550bbbdc14c594de129135a475e3df4bade84d6bb17120b85e86df",
+      "iris_version": "IRIS for UNIX (Ubuntu Server LTS for x86-64 Containers) 2026.3.0AI (Build 154U) Thu Sep 24 2026 10:04:49 EDT"
+    },
+    {
+      "original_run": {
+        "run_id": "710fdcf276e54025896647818f4802f4",
+        "notice_id": "US-CPSC:9996",
+        "notice_version": "ccbb347507680f8cd36bce2a748769579d742b4c583a7456fb112375e0e595db",
+        "lot_versions": {
+          "ANKER-model-unknown": "ddf93b9fe869ef97cad6cefa433dfb3aa8eb468e2d8d804c11cfefd3fa177126",
+          "ANKER-unverified": "188dad1c032f7466b30b592d0067387d00fd5416a368373a38ca3381f085cfa4",
+          "CONTROL-unrelated": "6e7ce90f928256e684e9504d8c94d31ae55560fb12f0c2c2abd9b01685ea212d",
+          "DREO-after": "c11db1800aa2f8e6f76f786c1d0df16d617b40a2fb1e4d0dbab9477ec0a19849",
+          "DREO-before": "ad40d0fcd676ea39f78828ad7046b48dc1f449a47710cad80b9d7264335b0856",
+          "DREO-end": "384f7c70b1e0fb7733df44b5f8039694beaa10a21a89323bbbf099b28a3d6e33",
+          "DREO-inside": "e4e8090c28d65d484279e4525b8c0b50aff78cc29c9e96ea08829f1e0d4f704a",
+          "DREO-start": "561d78c6933159ff22e047542c11e09a36520d80dd2625af4bc9d977f503e926",
+          "DREO-unknown": "1ae767499c993ece2dd1fd33e4560f944ce666d13910e48a1a79aca9a925b41a",
+          "HATCH-adapter": "d87bdd554cc77122e3dec14d8b40d529624ad7ec3a43200705d7a063e6e00c17",
+          "HATCH-generation-2": "0cef14e25e79fa883e248a7a721d359fc1c7e42476a8864db0023897b638f31e",
+          "HATCH-unknown": "7f0c4d8c4f16f9222966232ce39ae4a4af42edb29093fcb1c614f072ae2d4977"
+        },
+        "created_at": "2026-11-03T06:34:40.133221+00:00",
+        "status": "COMPLETED",
+        "mode": "live",
+        "provider": "gemini",
+        "model": "gemini-3.5-flash-lite",
+        "prompt_version": "investigator-v6",
+        "policy_version": "evidence-v2",
+        "tool_calls": [
+          {
+            "name": "ReadContext",
+            "at": "2026-11-03T06:34:40.877991+00:00",
+            "arguments": {},
+            "result_sha256": "7eddf7e3d14c3f320537b750d9a3ba947a89d34a067af58b17bc978f581dfbe3"
+          }
+        ],
+        "usage": {
+          "completion_tokens": 2671,
+          "prompt_tokens": 4393,
+          "total_tokens": 7064
+        },
+        "submitted_at": "2026-11-03T06:34:47.040461+00:00",
+        "validation": {
+          "at": "2026-11-03T06:34:47.040467+00:00",
+          "assessment_count": 12,
+          "input_format_version": "assessment-input-v1",
+          "revision": 1
+        },
+        "finished_at": "2026-11-03T06:34:47.042077+00:00"
+      },
+      "proposals": [
+        {
+          "lot_id": "DREO-unknown",
+          "decision": "NO_MATCH_FOR_NOTICE",
+          "reason": "The lot has brand DREO instead of Hatch.",
+          "checks": [
+            {
+              "field": "brand",
+              "operator": "equals",
+              "value": "Hatch",
+              "evidence": {
+                "snapshot_id": "api:9996:63f783cce8e68e18",
+                "quote": "Hatch Baby Recalls Power Adapters Sold with Rest 1st Generation Sound Machines Due to Shock Hazard"
+              }
+            }
+          ],
+          "missing_fields": []
+        },
+        {
+          "lot_id": "HATCH-adapter",
+          "decision": "MATCH_RECALL",
+          "reason": "The lot matches the recalled Hatch Rest 1st Generation sound machine and includes the recalled power adapter model CYAP05 050100U.",
+          "checks": [
+            {
+              "field": "brand",
+              "operator": "equals",
+              "value": "Hatch",
+              "evidence": {
+                "snapshot_id": "api:9996:63f783cce8e68e18",
+                "quote": "Hatch Baby Recalls Power Adapters Sold with Rest 1st Generation Sound Machines Due to Shock Hazard"
+              }
+            },
+            {
+              "field": "model",
+              "operator": "equals",
+              "value": "Rest",
+              "evidence": {
+                "snapshot_id": "api:9996:63f783cce8e68e18",
+                "quote": "This recall involves AC power adapters sold with some units of the Rest 1st Generation Sound Machine."
+              }
+            },
+            {
+              "field": "generation",
+              "operator": "equals",
+              "value": "1st Generation",
+              "evidence": {
+                "snapshot_id": "api:9996:63f783cce8e68e18",
+                "quote": "This recall involves AC power adapters sold with some units of the Rest 1st Generation Sound Machine."
+              }
+            },
+            {
+              "field": "adapter_model",
+              "operator": "equals",
+              "value": "CYAP05 050100U",
+              "evidence": {
+                "snapshot_id": "api:9996:63f783cce8e68e18",
+                "quote": "The power adapters have model number CYAP05 050100U."
+              }
+            }
+          ],
+          "missing_fields": []
+        },
+        {
+          "lot_id": "HATCH-generation-2",
+          "decision": "NO_MATCH_FOR_NOTICE",
+          "reason": "The recall applies to 1st Generation sound machines, but this lot is a 2nd generation unit which is explicitly stated to be unaffected.",
+          "checks": [
+            {
+              "field": "generation",
+              "operator": "equals",
+              "value": "1st Generation",
+              "evidence": {
+                "snapshot_id": "api:9996:63f783cce8e68e18",
+                "quote": "This recall involves AC power adapters sold with some units of the Rest 1st Generation Sound Machine."
+              }
+            },
+            {
+              "field": "generation",
+              "operator": "equals",
+              "value": "1st Generation",
+              "evidence": {
+                "snapshot_id": "page:9996:57f96db66f3bb45e",
+                "quote": "Rest 2nd Generation sound machines are not affected by this recall."
+              }
+            }
+          ],
+          "missing_fields": []
+        },
+        {
+          "lot_id": "DREO-start",
+          "decision": "NO_MATCH_FOR_NOTICE",
+          "reason": "The lot has brand DREO instead of Hatch.",
+          "checks": [
+            {
+              "field": "brand",
+              "operator": "equals",
+              "value": "Hatch",
+              "evidence": {
+                "snapshot_id": "api:9996:63f783cce8e68e18",
+                "quote": "Hatch Baby Recalls Power Adapters Sold with Rest 1st Generation Sound Machines Due to Shock Hazard"
+              }
+            }
+          ],
+          "missing_fields": []
+        },
+        {
+          "lot_id": "ANKER-unverified",
+          "decision": "NO_MATCH_FOR_NOTICE",
+          "reason": "The lot brand Anker does not match the recalled brand Hatch.",
+          "checks": [
+            {
+              "field": "brand",
+              "operator": "equals",
+              "value": "Hatch",
+              "evidence": {
+                "snapshot_id": "api:9996:63f783cce8e68e18",
+                "quote": "Hatch Baby Recalls Power Adapters Sold with Rest 1st Generation Sound Machines Due to Shock Hazard"
+              }
+            }
+          ],
+          "missing_fields": []
+        },
+        {
+          "lot_id": "DREO-before",
+          "decision": "NO_MATCH_FOR_NOTICE",
+          "reason": "The lot brand DREO does not match the recalled brand Hatch.",
+          "checks": [
+            {
+              "field": "brand",
+              "operator": "equals",
+              "value": "Hatch",
+              "evidence": {
+                "snapshot_id": "api:9996:63f783cce8e68e18",
+                "quote": "Hatch Baby Recalls Power Adapters Sold with Rest 1st Generation Sound Machines Due to Shock Hazard"
+              }
+            }
+          ],
+          "missing_fields": []
+        },
+        {
+          "lot_id": "DREO-inside",
+          "decision": "NO_MATCH_FOR_NOTICE",
+          "reason": "The lot has brand DREO instead of Hatch.",
+          "checks": [
+            {
+              "field": "brand",
+              "operator": "equals",
+              "value": "Hatch",
+              "evidence": {
+                "snapshot_id": "api:9996:63f783cce8e68e18",
+                "quote": "Hatch Baby Recalls Power Adapters Sold with Rest 1st Generation Sound Machines Due to Shock Hazard"
+              }
+            }
+          ],
+          "missing_fields": []
+        },
+        {
+          "lot_id": "DREO-after",
+          "decision": "NO_MATCH_FOR_NOTICE",
+          "reason": "The lot brand DREO does not match the recalled brand Hatch.",
+          "checks": [
+            {
+              "field": "brand",
+              "operator": "equals",
+              "value": "Hatch",
+              "evidence": {
+                "snapshot_id": "api:9996:63f783cce8e68e18",
+                "quote": "Hatch Baby Recalls Power Adapters Sold with Rest 1st Generation Sound Machines Due to Shock Hazard"
+              }
+            }
+          ],
+          "missing_fields": []
+        },
+        {
+          "lot_id": "HATCH-unknown",
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "reason": "The lot is a Hatch Rest 1st Generation sound machine, but the adapter model is missing, requiring human review under adapter identity rules.",
+          "checks": [
+            {
+              "field": "brand",
+              "operator": "equals",
+              "value": "Hatch",
+              "evidence": {
+                "snapshot_id": "api:9996:63f783cce8e68e18",
+                "quote": "Hatch Baby Recalls Power Adapters Sold with Rest 1st Generation Sound Machines Due to Shock Hazard"
+              }
+            },
+            {
+              "field": "model",
+              "operator": "equals",
+              "value": "Rest",
+              "evidence": {
+                "snapshot_id": "api:9996:63f783cce8e68e18",
+                "quote": "This recall involves AC power adapters sold with some units of the Rest 1st Generation Sound Machine."
+              }
+            },
+            {
+              "field": "generation",
+              "operator": "equals",
+              "value": "1st Generation",
+              "evidence": {
+                "snapshot_id": "api:9996:63f783cce8e68e18",
+                "quote": "This recall involves AC power adapters sold with some units of the Rest 1st Generation Sound Machine."
+              }
+            }
+          ],
+          "missing_fields": [
+            "adapter_model"
+          ]
+        },
+        {
+          "lot_id": "ANKER-model-unknown",
+          "decision": "NO_MATCH_FOR_NOTICE",
+          "reason": "The lot brand Anker does not match the recalled brand Hatch.",
+          "checks": [
+            {
+              "field": "brand",
+              "operator": "equals",
+              "value": "Hatch",
+              "evidence": {
+                "snapshot_id": "api:9996:63f783cce8e68e18",
+                "quote": "Hatch Baby Recalls Power Adapters Sold with Rest 1st Generation Sound Machines Due to Shock Hazard"
+              }
+            }
+          ],
+          "missing_fields": []
+        },
+        {
+          "lot_id": "CONTROL-unrelated",
+          "decision": "NO_MATCH_FOR_NOTICE",
+          "reason": "The lot brand DemoCo does not match the recalled brand Hatch.",
+          "checks": [
+            {
+              "field": "brand",
+              "operator": "equals",
+              "value": "Hatch",
+              "evidence": {
+                "snapshot_id": "api:9996:63f783cce8e68e18",
+                "quote": "Hatch Baby Recalls Power Adapters Sold with Rest 1st Generation Sound Machines Due to Shock Hazard"
+              }
+            }
+          ],
+          "missing_fields": []
+        },
+        {
+          "lot_id": "DREO-end",
+          "decision": "NO_MATCH_FOR_NOTICE",
+          "reason": "The lot brand DREO does not match the recalled brand Hatch.",
+          "checks": [
+            {
+              "field": "brand",
+              "operator": "equals",
+              "value": "Hatch",
+              "evidence": {
+                "snapshot_id": "api:9996:63f783cce8e68e18",
+                "quote": "Hatch Baby Recalls Power Adapters Sold with Rest 1st Generation Sound Machines Due to Shock Hazard"
+              }
+            }
+          ],
+          "missing_fields": []
+        }
+      ],
+      "evidence_file": "research/evidence/iris-aihub-hatch-v6.json",
+      "evidence_sha256": "76a747a7c047f4ade8e432b6b805c5f39187b6719b7f20fb7211dbdb17f9d0fd",
+      "iris_version": "IRIS for UNIX (Ubuntu Server LTS for x86-64 Containers) 2026.3.0AI (Build 154U) Thu Sep 24 2026 10:04:49 EDT"
+    },
+    {
+      "original_run": {
+        "run_id": "58620941d4aa404da9ea4a66885eb981",
+        "notice_id": "US-CPSC:10311",
+        "notice_version": "6e4e0bd3d0507c43770e060ea60c00cb2ce110e4dc5375fd7dd3d5aa62f9b426",
+        "lot_versions": {
+          "ANKER-model-unknown": "ddf93b9fe869ef97cad6cefa433dfb3aa8eb468e2d8d804c11cfefd3fa177126",
+          "ANKER-unverified": "188dad1c032f7466b30b592d0067387d00fd5416a368373a38ca3381f085cfa4",
+          "CONTROL-unrelated": "6e7ce90f928256e684e9504d8c94d31ae55560fb12f0c2c2abd9b01685ea212d",
+          "DREO-after": "c11db1800aa2f8e6f76f786c1d0df16d617b40a2fb1e4d0dbab9477ec0a19849",
+          "DREO-before": "ad40d0fcd676ea39f78828ad7046b48dc1f449a47710cad80b9d7264335b0856",
+          "DREO-end": "384f7c70b1e0fb7733df44b5f8039694beaa10a21a89323bbbf099b28a3d6e33",
+          "DREO-inside": "e4e8090c28d65d484279e4525b8c0b50aff78cc29c9e96ea08829f1e0d4f704a",
+          "DREO-start": "561d78c6933159ff22e047542c11e09a36520d80dd2625af4bc9d977f503e926",
+          "DREO-unknown": "1ae767499c993ece2dd1fd33e4560f944ce666d13910e48a1a79aca9a925b41a",
+          "HATCH-adapter": "d87bdd554cc77122e3dec14d8b40d529624ad7ec3a43200705d7a063e6e00c17",
+          "HATCH-generation-2": "0cef14e25e79fa883e248a7a721d359fc1c7e42476a8864db0023897b638f31e",
+          "HATCH-unknown": "7f0c4d8c4f16f9222966232ce39ae4a4af42edb29093fcb1c614f072ae2d4977"
+        },
+        "created_at": "2026-11-03T06:34:48.388779+00:00",
+        "status": "COMPLETED",
+        "mode": "live",
+        "provider": "gemini",
+        "model": "gemini-3.5-flash-lite",
+        "prompt_version": "investigator-v6",
+        "policy_version": "evidence-v2",
+        "tool_calls": [
+          {
+            "name": "ReadContext",
+            "at": "2026-11-03T06:34:49.179105+00:00",
+            "arguments": {},
+            "result_sha256": "147e3f901325265afbdc47b63413a045a8c15afcd74f7a7852744c17e0c0405c"
+          }
+        ],
+        "usage": {
+          "completion_tokens": 2132,
+          "prompt_tokens": 4548,
+          "total_tokens": 6680
+        },
+        "submitted_at": "2026-11-03T06:34:53.950470+00:00",
+        "validation": {
+          "at": "2026-11-03T06:34:53.950476+00:00",
+          "assessment_count": 12,
+          "input_format_version": "assessment-input-v1",
+          "revision": 1
+        },
+        "finished_at": "2026-11-03T06:34:53.952194+00:00"
+      },
+      "proposals": [
+        {
+          "lot_id": "CONTROL-unrelated",
+          "decision": "NO_MATCH_FOR_NOTICE",
+          "reason": "The lot brand does not match the recalled brand.",
+          "checks": [
+            {
+              "field": "brand",
+              "operator": "equals",
+              "value": "Anker",
+              "evidence": {
+                "snapshot_id": "api:10311:b078caa8b8bad701",
+                "quote": "This recall involves Anker PowerCore 10000 power banks with model number A1263."
+              }
+            }
+          ],
+          "missing_fields": []
+        },
+        {
+          "lot_id": "DREO-before",
+          "decision": "NO_MATCH_FOR_NOTICE",
+          "reason": "The lot brand does not match the recalled brand.",
+          "checks": [
+            {
+              "field": "brand",
+              "operator": "equals",
+              "value": "Anker",
+              "evidence": {
+                "snapshot_id": "api:10311:b078caa8b8bad701",
+                "quote": "This recall involves Anker PowerCore 10000 power banks with model number A1263."
+              }
+            }
+          ],
+          "missing_fields": []
+        },
+        {
+          "lot_id": "HATCH-generation-2",
+          "decision": "NO_MATCH_FOR_NOTICE",
+          "reason": "The lot brand does not match the recalled brand.",
+          "checks": [
+            {
+              "field": "brand",
+              "operator": "equals",
+              "value": "Anker",
+              "evidence": {
+                "snapshot_id": "api:10311:b078caa8b8bad701",
+                "quote": "This recall involves Anker PowerCore 10000 power banks with model number A1263."
+              }
+            }
+          ],
+          "missing_fields": []
+        },
+        {
+          "lot_id": "ANKER-unverified",
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "reason": "The recall notes that only units with qualifying serial numbers are included and serial verification is unknown.",
+          "checks": [
+            {
+              "field": "brand",
+              "operator": "equals",
+              "value": "Anker",
+              "evidence": {
+                "snapshot_id": "api:10311:b078caa8b8bad701",
+                "quote": "This recall involves Anker PowerCore 10000 power banks with model number A1263."
+              }
+            },
+            {
+              "field": "model",
+              "operator": "equals",
+              "value": "A1263",
+              "evidence": {
+                "snapshot_id": "api:10311:b078caa8b8bad701",
+                "quote": "This recall involves Anker PowerCore 10000 power banks with model number A1263."
+              }
+            }
+          ],
+          "missing_fields": [
+            "serial_number"
+          ]
+        },
+        {
+          "lot_id": "ANKER-model-unknown",
+          "decision": "INSUFFICIENT_EVIDENCE",
+          "reason": "The lot lacks a model number, making it uncertain whether it is model A1263.",
+          "checks": [
+            {
+              "field": "brand",
+              "operator": "equals",
+              "value": "Anker",
+              "evidence": {
+                "snapshot_id": "api:10311:b078caa8b8bad701",
+                "quote": "This recall involves Anker PowerCore 10000 power banks with model number A1263."
+              }
+            }
+          ],
+          "missing_fields": [
+            "model"
+          ]
+        },
+        {
+          "lot_id": "DREO-after",
+          "decision": "NO_MATCH_FOR_NOTICE",
+          "reason": "The lot brand does not match the recalled brand.",
+          "checks": [
+            {
+              "field": "brand",
+              "operator": "equals",
+              "value": "Anker",
+              "evidence": {
+                "snapshot_id": "api:10311:b078caa8b8bad701",
+                "quote": "This recall involves Anker PowerCore 10000 power banks with model number A1263."
+              }
+            }
+          ],
+          "missing_fields": []
+        },
+        {
+          "lot_id": "HATCH-unknown",
+          "decision": "NO_MATCH_FOR_NOTICE",
+          "reason": "The lot brand does not match the recalled brand.",
+          "checks": [
+            {
+              "field": "brand",
+              "operator": "equals",
+              "value": "Anker",
+              "evidence": {
+                "snapshot_id": "api:10311:b078caa8b8bad701",
+                "quote": "This recall involves Anker PowerCore 10000 power banks with model number A1263."
+              }
+            }
+          ],
+          "missing_fields": []
+        },
+        {
+          "lot_id": "DREO-end",
+          "decision": "NO_MATCH_FOR_NOTICE",
+          "reason": "The lot brand does not match the recalled brand.",
+          "checks": [
+            {
+              "field": "brand",
+              "operator": "equals",
+              "value": "Anker",
+              "evidence": {
+                "snapshot_id": "api:10311:b078caa8b8bad701",
+                "quote": "This recall involves Anker PowerCore 10000 power banks with model number A1263."
+              }
+            }
+          ],
+          "missing_fields": []
+        },
+        {
+          "lot_id": "DREO-inside",
+          "decision": "NO_MATCH_FOR_NOTICE",
+          "reason": "The lot brand does not match the recalled brand.",
+          "checks": [
+            {
+              "field": "brand",
+              "operator": "equals",
+              "value": "Anker",
+              "evidence": {
+                "snapshot_id": "api:10311:b078caa8b8bad701",
+                "quote": "This recall involves Anker PowerCore 10000 power banks with model number A1263."
+              }
+            }
+          ],
+          "missing_fields": []
+        },
+        {
+          "lot_id": "DREO-unknown",
+          "decision": "NO_MATCH_FOR_NOTICE",
+          "reason": "The lot brand does not match the recalled brand.",
+          "checks": [
+            {
+              "field": "brand",
+              "operator": "equals",
+              "value": "Anker",
+              "evidence": {
+                "snapshot_id": "api:10311:b078caa8b8bad701",
+                "quote": "This recall involves Anker PowerCore 10000 power banks with model number A1263."
+              }
+            }
+          ],
+          "missing_fields": []
+        },
+        {
+          "lot_id": "DREO-start",
+          "decision": "NO_MATCH_FOR_NOTICE",
+          "reason": "The lot brand does not match the recalled brand.",
+          "checks": [
+            {
+              "field": "brand",
+              "operator": "equals",
+              "value": "Anker",
+              "evidence": {
+                "snapshot_id": "api:10311:b078caa8b8bad701",
+                "quote": "This recall involves Anker PowerCore 10000 power banks with model number A1263."
+              }
+            }
+          ],
+          "missing_fields": []
+        },
+        {
+          "lot_id": "HATCH-adapter",
+          "decision": "NO_MATCH_FOR_NOTICE",
+          "reason": "The lot brand does not match the recalled brand.",
+          "checks": [
+            {
+              "field": "brand",
+              "operator": "equals",
+              "value": "Anker",
+              "evidence": {
+                "snapshot_id": "api:10311:b078caa8b8bad701",
+                "quote": "This recall involves Anker PowerCore 10000 power banks with model number A1263."
+              }
+            }
+          ],
+          "missing_fields": []
+        }
+      ],
+      "evidence_file": "research/evidence/iris-aihub-anker-v6.json",
+      "evidence_sha256": "05928d5cf0fa68253b84b9adb1dd312bafdbaa406179bbc1c13b762f0a130afe",
+      "iris_version": "IRIS for UNIX (Ubuntu Server LTS for x86-64 Containers) 2026.3.0AI (Build 154U) Thu Sep 24 2026 10:04:49 EDT"
+    }
+  ]
+}

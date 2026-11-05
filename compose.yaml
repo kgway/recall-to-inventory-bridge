@@ -1,0 +1,17 @@
+# SPDX-License-Identifier: MPL-2.0
+services:
+  iris:
+    build:
+      context: .
+      args:
+        IRIS_IMAGE: ${IRIS_IMAGE:-recall-guard-aihub:2027.1.0AI.109.0}
+    env_file: .env
+    ports:
+      - "127.0.0.1:52773:52773"
+    volumes:
+      - recall-data:/usr/irissys/mgr/recallguard-data
+    stop_grace_period: 60s
+    shm_size: 1gb
+
+volumes:
+  recall-data:

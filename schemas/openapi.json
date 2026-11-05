@@ -1,0 +1,493 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Recall-to-Inventory Bridge integration API",
+    "version": "0.1.0",
+    "description": "Inventory snapshot import and advisory output. No external stock action or writeback endpoint."
+  },
+  "servers": [
+    {
+      "url": "http://localhost:52773/recall-guard",
+      "description": "Loopback evaluation endpoint. Use an authenticated private TLS deployment for external clients."
+    }
+  ],
+  "security": [
+    {
+      "irisPassword": []
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "irisPassword": {
+        "type": "http",
+        "scheme": "basic"
+      }
+    },
+    "schemas": {
+      "SnapshotInput": {
+        "type": "object",
+        "required": [
+          "source_system"
+        ],
+        "properties": {
+          "source_system": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160
+          },
+          "format": {
+            "enum": [
+              "csv",
+              "json"
+            ]
+          },
+          "content": {
+            "type": "string",
+            "maxLength": 100000,
+            "description": "Submitted UTF-8 text, at most 100,000 bytes on the server."
+          },
+          "items": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 100,
+            "items": {
+              "$ref": "./inventory-item.schema.json"
+            }
+          },
+          "mapping": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "delimiter": {
+            "enum": [
+              ",",
+              ";",
+              "\t"
+            ]
+          },
+          "data_classification": {
+            "enum": [
+              "user-provided",
+              "synthetic-example"
+            ],
+            "default": "user-provided"
+          }
+        },
+        "oneOf": [
+          {
+            "required": [
+              "items"
+            ],
+            "not": {
+              "required": [
+                "content"
+              ]
+            }
+          },
+          {
+            "required": [
+              "format",
+              "content"
+            ],
+            "not": {
+              "required": [
+                "items"
+              ]
+            }
+          }
+        ]
+      },
+      "AuditPolicyInput": {
+        "type": "object",
+        "required": [
+          "enabled",
+          "auto_ai",
+          "interval_seconds"
+        ],
+        "properties": {
+          "enabled": {
+            "type": "boolean"
+          },
+          "auto_ai": {
+            "type": "boolean",
+            "description": "Opt-in; requires configured confirmed Free Tier live provider. At most one run/cycle and five automatic runs/UTC day, also constrained by the existing daily cap."
+          },
+          "interval_seconds": {
+            "type": "integer",
+            "minimum": 60,
+            "maximum": 86400,
+            "default": 3600
+          },
+          "plan_hash": {
+            "type": "string",
+            "description": "Current reviewed discovery_plan hash, required when enabling periodic work."
+          }
+        }
+      }
+    }
+  },
+  "paths": {
+    "/api/preview_inventory": {
+      "post": {
+        "operationId": "previewInventory",
+        "description": "Validate and map input without importing or calling an external service.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SnapshotInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "JSON envelope with ok=true and result."
+          },
+          "400": {
+            "description": "Invalid request. Error envelope includes ok=false, error and error_type."
+          },
+          "409": {
+            "description": "InventoryConflict: stale source/preview or conflicting import_id."
+          },
+          "401": {
+            "description": "IRIS authentication required."
+          }
+        }
+      }
+    },
+    "/api/import_inventory": {
+      "post": {
+        "operationId": "importInventory",
+        "description": "Atomically upsert a local snapshot; never write to an external inventory system.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/SnapshotInput"
+                  },
+                  {
+                    "type": "object",
+                    "required": [
+                      "preview_hash",
+                      "workspace_revision",
+                      "import_id"
+                    ],
+                    "properties": {
+                      "preview_hash": {
+                        "type": "string",
+                        "pattern": "^[a-f0-9]{64}$"
+                      },
+                      "workspace_revision": {
+                        "type": "string",
+                        "pattern": "^[a-f0-9]{64}$"
+                      },
+                      "import_id": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 100
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "JSON envelope with ok=true and result."
+          },
+          "400": {
+            "description": "Invalid request. Error envelope includes ok=false, error and error_type."
+          },
+          "409": {
+            "description": "InventoryConflict: stale source/preview or conflicting import_id."
+          },
+          "401": {
+            "description": "IRIS authentication required."
+          }
+        }
+      }
+    },
+    "/api/discovery_plan": {
+      "post": {
+        "operationId": "reviewDiscoveryPlan",
+        "description": "Review the product terms sent to CPSC; no network query is performed here.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "JSON envelope with ok=true and result."
+          },
+          "400": {
+            "description": "Invalid request. Error envelope includes ok=false, error and error_type."
+          },
+          "409": {
+            "description": "InventoryConflict: stale source/preview or conflicting import_id."
+          },
+          "401": {
+            "description": "IRIS authentication required."
+          }
+        }
+      }
+    },
+    "/api/discover": {
+      "post": {
+        "operationId": "discoverCpscCandidates",
+        "description": "Queue bounded CPSC candidate retrieval, with no AI call or inventory mutation.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "plan_hash",
+                  "request_id"
+                ],
+                "properties": {
+                  "plan_hash": {
+                    "type": "string"
+                  },
+                  "request_id": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9_-]{8,100}$"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "Accepted for asynchronous processing; poll meta.source_task with request_id."
+          },
+          "400": {
+            "description": "Invalid request. Error envelope includes ok=false, error and error_type."
+          },
+          "409": {
+            "description": "InventoryConflict: stale source/preview or conflicting import_id."
+          },
+          "401": {
+            "description": "IRIS authentication required."
+          }
+        }
+      }
+    },
+    "/api/select_candidates": {
+      "post": {
+        "operationId": "selectCpscCandidates",
+        "description": "Queue official evidence retrieval for selected captured candidates. No AI is called.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "discovery_id",
+                  "notice_ids",
+                  "request_id"
+                ],
+                "properties": {
+                  "discovery_id": {
+                    "type": "string"
+                  },
+                  "notice_ids": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 5,
+                    "uniqueItems": true,
+                    "items": {
+                      "type": "string",
+                      "pattern": "^US-CPSC:[0-9]+$"
+                    }
+                  },
+                  "request_id": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "Accepted for asynchronous processing; poll meta.source_task with request_id."
+          },
+          "400": {
+            "description": "Invalid request. Error envelope includes ok=false, error and error_type."
+          },
+          "409": {
+            "description": "InventoryConflict: stale source/preview or conflicting import_id."
+          },
+          "401": {
+            "description": "IRIS authentication required."
+          }
+        }
+      }
+    },
+    "/api/state": {
+      "get": {
+        "operationId": "getBridgeState",
+        "description": "Current local state and latest discovery. Asynchronous source-task completion is in result.meta.source_task.",
+        "responses": {
+          "200": {
+            "description": "JSON envelope with ok=true and result."
+          }
+        }
+      }
+    },
+    "/api/advisories/{format}": {
+      "get": {
+        "operationId": "getAdvisories",
+        "description": "Authenticated pull feed. authority=ADVISORY_ONLY, complete_recall_coverage=false. Existing systems own all actions. This read does not require a running Production.",
+        "parameters": [
+          {
+            "name": "format",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "enum": [
+                "json",
+                "csv"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Direct JSON advisory document or UTF-8 CSV, without an ok/result envelope.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "schema",
+                    "authority",
+                    "scope",
+                    "items"
+                  ],
+                  "properties": {
+                    "schema": {
+                      "const": "recall-to-inventory-bridge.advisories.v1"
+                    },
+                    "authority": {
+                      "const": "ADVISORY_ONLY"
+                    },
+                    "external_inventory_updated": {
+                      "const": false
+                    },
+                    "scope": {
+                      "type": "object"
+                    },
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "object"
+                      }
+                    }
+                  }
+                }
+              },
+              "text/csv": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "IRIS authentication required."
+          }
+        }
+      }
+    },
+    "/api/audit_configure": {
+      "post": {
+        "operationId": "previewInventory",
+        "description": "Read-only recurring audit; no external inventory actions. Poll GET /api/state monitor.cycles after a queued request. Timer work runs only while the host and IRIS Production are running.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuditPolicyInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "JSON envelope with ok=true and result."
+          },
+          "400": {
+            "description": "Invalid request. Error envelope includes ok=false, error and error_type."
+          },
+          "409": {
+            "description": "InventoryConflict: stale source/preview or conflicting import_id."
+          },
+          "401": {
+            "description": "IRIS authentication required."
+          }
+        },
+        "summary": "Save explicit recurring audit policy"
+      }
+    },
+    "/api/audit_now": {
+      "post": {
+        "operationId": "discoverCpscCandidates",
+        "description": "Read-only recurring audit; no external inventory actions. Poll GET /api/state monitor.cycles after a queued request. Timer work runs only while the host and IRIS Production are running.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "request_id"
+                ],
+                "properties": {
+                  "request_id": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9_-]{8,100}$"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "Accepted for asynchronous processing; poll meta.source_task with request_id."
+          },
+          "400": {
+            "description": "Invalid request. Error envelope includes ok=false, error and error_type."
+          },
+          "409": {
+            "description": "InventoryConflict: stale source/preview or conflicting import_id."
+          },
+          "401": {
+            "description": "IRIS authentication required."
+          }
+        },
+        "summary": "Queue a bounded inventory recall audit"
+      }
+    }
+  }
+}

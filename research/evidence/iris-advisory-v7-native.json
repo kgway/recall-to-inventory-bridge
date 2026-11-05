@@ -1,0 +1,137 @@
+{
+  "at_utc": "2026-11-04T09:21:28.101475+00:00",
+  "success": true,
+  "inventory_is_synthetic_example": true,
+  "external_inventory_updated": false,
+  "run": {
+    "run_id": "734900d502544860ad9c608fec8c7ed1",
+    "notice_id": "US-CPSC:11038",
+    "notice_version": "c823e2e31589838c501d2425749be242baa57d284b22cf4d0264d5bc26986f51",
+    "lot_versions": {
+      "inventory-d5977089cf1493b441036555057feb42": "94e2e798f220f1c404b78637480ab4a239b468f12c9124c8e8e0179f2571f54d"
+    },
+    "created_at": "2026-11-04T09:22:04.370438+00:00",
+    "status": "COMPLETED",
+    "mode": "live",
+    "provider": "gemini",
+    "model": "gemini-3.5-flash-lite",
+    "prompt_version": "investigator-v7-advisory",
+    "policy_version": "evidence-v2",
+    "tool_calls": [
+      {
+        "name": "ReadContext",
+        "at": "2026-11-04T09:22:08.602906+00:00",
+        "arguments": {},
+        "result_sha256": "19c586575d4eb8ea21a4af084faf2871fdd2b6e34c6fe6282a5a90e8d4f8493e"
+      }
+    ],
+    "usage": {
+      "completion_tokens": 464,
+      "prompt_tokens": 2589,
+      "total_tokens": 3053
+    },
+    "submitted_at": "2026-11-04T09:22:10.361753+00:00",
+    "validation": {
+      "at": "2026-11-04T09:22:10.361760+00:00",
+      "assessment_count": 1,
+      "input_format_version": "assessment-input-v1",
+      "revision": 1
+    },
+    "finished_at": "2026-11-04T09:22:10.362708+00:00"
+  },
+  "assessments": [
+    {
+      "notice_id": "US-CPSC:11038",
+      "notice_version": "c823e2e31589838c501d2425749be242baa57d284b22cf4d0264d5bc26986f51",
+      "lot_id": "inventory-d5977089cf1493b441036555057feb42",
+      "inventory_version": "94e2e798f220f1c404b78637480ab4a239b468f12c9124c8e8e0179f2571f54d",
+      "decision": "MATCH_RECALL",
+      "reason": "The inventory lot is a DREO space heater, model DR-HSH015, manufactured in April 2025, which matches the brand, model, and the April 2025 through January 2026 manufacturing date range specified in the recall.",
+      "checks": [
+        {
+          "field": "brand",
+          "operator": "equals",
+          "value": "DREO",
+          "evidence": {
+            "snapshot_id": "api:11038:07bbeee84b07b73a",
+            "quote": "This recall involves DREO space heaters, model number DR-HSH015."
+          }
+        },
+        {
+          "field": "model",
+          "operator": "equals",
+          "value": "DR-HSH015",
+          "evidence": {
+            "snapshot_id": "api:11038:07bbeee84b07b73a",
+            "quote": "This recall involves DREO space heaters, model number DR-HSH015."
+          }
+        },
+        {
+          "field": "manufactured_month",
+          "operator": "between_inclusive",
+          "value": [
+            "2025-04",
+            "2026-01"
+          ],
+          "evidence": {
+            "snapshot_id": "api:11038:07bbeee84b07b73a",
+            "quote": "Only units manufactured from April 2025 through January 2026 are included in this recall."
+          }
+        }
+      ],
+      "missing_fields": [],
+      "run_id": "734900d502544860ad9c608fec8c7ed1",
+      "at": "2026-11-04T09:22:10.361451+00:00",
+      "mode": "live",
+      "policy_version": "evidence-v2",
+      "proposed_assessment": {
+        "lot_id": "inventory-d5977089cf1493b441036555057feb42",
+        "decision": "MATCH_RECALL",
+        "reason": "The inventory lot is a DREO space heater, model DR-HSH015, manufactured in April 2025, which matches the brand, model, and the April 2025 through January 2026 manufacturing date range specified in the recall.",
+        "checks": [
+          {
+            "field": "brand",
+            "operator": "equals",
+            "value": "DREO",
+            "evidence": {
+              "snapshot_id": "api:11038:07bbeee84b07b73a",
+              "quote": "This recall involves DREO space heaters, model number DR-HSH015."
+            }
+          },
+          {
+            "field": "model",
+            "operator": "equals",
+            "value": "DR-HSH015",
+            "evidence": {
+              "snapshot_id": "api:11038:07bbeee84b07b73a",
+              "quote": "This recall involves DREO space heaters, model number DR-HSH015."
+            }
+          },
+          {
+            "field": "manufactured_month",
+            "operator": "between_inclusive",
+            "value": [
+              "2025-04",
+              "2026-01"
+            ],
+            "evidence": {
+              "snapshot_id": "api:11038:07bbeee84b07b73a",
+              "quote": "Only units manufactured from April 2025 through January 2026 are included in this recall."
+            }
+          }
+        ],
+        "missing_fields": []
+      },
+      "input_format_version": "assessment-input-v1",
+      "input_normalizations": []
+    }
+  ],
+  "native_ai_hub_executed": true,
+  "context_hash_matches": true,
+  "business_reference_fields_omitted": true,
+  "matched_expected_dreo_advice": true,
+  "stock_unchanged": true,
+  "native_trace_exported": true,
+  "finished_at_utc": "2026-11-04T09:22:50.336102+00:00",
+  "record_type": "Technical extract of an existing verification record; not a new inference."
+}

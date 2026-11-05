@@ -1,0 +1,211 @@
+{
+  "schema": "recall-to-inventory-bridge.advisories.v1",
+  "generated_at": "2026-11-04T09:13:11.167922+00:00",
+  "authority": "ADVISORY_ONLY",
+  "external_inventory_updated": false,
+  "scope": {
+    "notice_ids": [
+      "US-CPSC:11038"
+    ],
+    "complete_recall_coverage": false,
+    "meaning": "Only selected notices were assessed. No match or no search results never establishes product safety."
+  },
+  "latest_discovery": {
+    "discovery_id": "ec3b12916718b7eb2afc3f968a830cd0559f2547b6bf922ffdc776d6f2e1d6ba",
+    "status": "COMPLETED",
+    "at": "2026-11-04T09:13:07.651038+00:00",
+    "complete_recall_coverage": false
+  },
+  "policy_version": "evidence-v2",
+  "items": [
+    {
+      "lot_id": "inventory-7fbfe87eb1bbbdad1964838ba7cfc65a",
+      "external_id": "000103",
+      "source_system": "sample-erp",
+      "sku": "POWER-1263",
+      "lot_number": "LOT-B",
+      "location": "WH-EAST",
+      "name": "Anker PowerCore 10000",
+      "quantity": 18,
+      "source_updated_at": "2026-11-04T00:00:00Z",
+      "received_at": "2026-11-04T09:13:07.215674+00:00",
+      "version": "868ec4677922a545ce30cffde9eefc9a3ab95b0b3647e86616884cd39423009a",
+      "import_id": "retailer-export-001",
+      "synthetic": true,
+      "data_classification": "synthetic-example",
+      "advisory": "CANDIDATES_FOUND",
+      "assessments": [
+        {
+          "notice_id": "US-CPSC:11038",
+          "notice_version": "c823e2e31589838c501d2425749be242baa57d284b22cf4d0264d5bc26986f51",
+          "official_url": "https://cpsc.gov/Recalls/2027/DREO-Recalls-DR-HSH015-Space-Heaters-Due-to-Fire-and-Burn-Hazards",
+          "decision": "NOT_EVALUATED",
+          "reason": "No current completed assessment.",
+          "run_id": null,
+          "checks": [],
+          "missing_fields": [
+            "current_assessment"
+          ],
+          "mode": null
+        }
+      ],
+      "candidate_notices": [
+        {
+          "notice_id": "US-CPSC:10631",
+          "title": "Trankerloop Baby Bath Seats Recalled Due to Risk of Serious Injury or Death to Children from Drowning; Violates Mandatory Standard for Infant Bath Seats",
+          "official_url": "https://www.cpsc.gov/Recalls/2026/Trankerloop-Baby-Bath-Seats-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-to-Children-from-Drowning-Violates-Mandatory-Standard-for-Infant-Bath-Seats",
+          "discovery_id": "ec3b12916718b7eb2afc3f968a830cd0559f2547b6bf922ffdc776d6f2e1d6ba",
+          "classification": "CANDIDATE_ONLY"
+        },
+        {
+          "notice_id": "US-CPSC:10311",
+          "title": "More than One Million Anker Power Banks Recalled Due to Fire and Burn Hazards; Manufactured by Anker Innovations",
+          "official_url": "https://www.cpsc.gov/Recalls/2025/More-than-One-Million-Anker-Power-Banks-Recalled-Due-to-Fire-and-Burn-Hazards-Manufactured-by-Anker-Innovations",
+          "discovery_id": "ec3b12916718b7eb2afc3f968a830cd0559f2547b6bf922ffdc776d6f2e1d6ba",
+          "classification": "CANDIDATE_ONLY"
+        },
+        {
+          "notice_id": "US-CPSC:10099",
+          "title": "Anker Soundcore Lithium-Ion Battery Powered Bluetooth Speakers Recalled Due to Fire Hazard; Sold Exclusively on Amazon.com by Anker Innovations",
+          "official_url": "https://www.cpsc.gov/Recalls/2025/Anker-Soundcore-Lithium-Ion-Battery-Powered-Bluetooth-Speakers-Recalled-Due-to-Fire-Hazard-Sold-Exclusively-on-Amazon-com-by-Anker-Innovations",
+          "discovery_id": "ec3b12916718b7eb2afc3f968a830cd0559f2547b6bf922ffdc776d6f2e1d6ba",
+          "classification": "CANDIDATE_ONLY"
+        },
+        {
+          "notice_id": "US-CPSC:10067",
+          "title": "Anker Power Banks Recalled Due to Fire and Burn Hazards; Manufactured by Anker Innovations",
+          "official_url": "https://www.cpsc.gov/Recalls/2025/Anker-Power-Banks-Recalled-Due-to-Fire-and-Burn-Hazards-Manufactured-by-Anker-Innovations",
+          "discovery_id": "ec3b12916718b7eb2afc3f968a830cd0559f2547b6bf922ffdc776d6f2e1d6ba",
+          "classification": "CANDIDATE_ONLY"
+        },
+        {
+          "notice_id": "US-CPSC:9881",
+          "title": "Anker EverFrost Lithium-Ion Battery Powered Coolers Recalled Due to Battery Fire Hazard; Manufactured by Anker Innovations",
+          "official_url": "https://www.cpsc.gov/Recalls/2024/Anker-EverFrost-Lithium-Ion-Battery-Powered-Coolers-Recalled-Due-to-Battery-Fire-Hazard-Manufactured-by-Anker-Innovations",
+          "discovery_id": "ec3b12916718b7eb2afc3f968a830cd0559f2547b6bf922ffdc776d6f2e1d6ba",
+          "classification": "CANDIDATE_ONLY"
+        },
+        {
+          "notice_id": "US-CPSC:9557",
+          "title": "Fantasia Trading Recalls Anker Power Banks Due to Fire Hazard",
+          "official_url": "https://www.cpsc.gov/Recalls/2023/Fantasia-Trading-Recalls-Anker-Power-Banks-Due-to-Fire-Hazard",
+          "discovery_id": "ec3b12916718b7eb2afc3f968a830cd0559f2547b6bf922ffdc776d6f2e1d6ba",
+          "classification": "CANDIDATE_ONLY"
+        },
+        {
+          "notice_id": "US-CPSC:9440",
+          "title": "Anker Play Products Recalls Bolt Foldable Children's Scooters Due to Violation of Federal Lead Paint Ban; Lead Poisoning Hazard",
+          "official_url": "https://www.cpsc.gov/Recalls/2023/Anker-Play-Products-Recalls-Bolt-Foldable-Childrens-Scooters-Due-to-Violation-of-Federal-Lead-Paint-Ban-Lead-Poisoning-Hazard",
+          "discovery_id": "ec3b12916718b7eb2afc3f968a830cd0559f2547b6bf922ffdc776d6f2e1d6ba",
+          "classification": "CANDIDATE_ONLY"
+        },
+        {
+          "notice_id": "US-CPSC:9002",
+          "title": "Anker Play Products Recalls 10-in-1 Incredible Inventions Science Kit Due to Violation of the Federal Lead Paint Ban",
+          "official_url": "https://www.cpsc.gov/Recalls/2021/Anker-Play-Products-Recalls-10-in-1-Incredible-Inventions-Science-Kit-Due-to-Violation-of-the-Federal-Lead-Paint-Ban",
+          "discovery_id": "ec3b12916718b7eb2afc3f968a830cd0559f2547b6bf922ffdc776d6f2e1d6ba",
+          "classification": "CANDIDATE_ONLY"
+        }
+      ],
+      "external_inventory_updated": false
+    },
+    {
+      "lot_id": "inventory-d17f652ad2f1890bc94992c8ee71a9a8",
+      "external_id": "000102",
+      "source_system": "sample-erp",
+      "sku": "SOUND-REST",
+      "lot_number": "LOT-A",
+      "location": "WH-WEST",
+      "name": "Hatch Rest sound machine",
+      "quantity": 12,
+      "source_updated_at": "2026-11-04T00:00:00Z",
+      "received_at": "2026-11-04T09:13:07.215674+00:00",
+      "version": "413a6417d64f2fdcae572081eac35e64a459c6c6b8ca194b0f7561e362852905",
+      "import_id": "retailer-export-001",
+      "synthetic": true,
+      "data_classification": "synthetic-example",
+      "advisory": "CANDIDATES_FOUND",
+      "assessments": [
+        {
+          "notice_id": "US-CPSC:11038",
+          "notice_version": "c823e2e31589838c501d2425749be242baa57d284b22cf4d0264d5bc26986f51",
+          "official_url": "https://cpsc.gov/Recalls/2027/DREO-Recalls-DR-HSH015-Space-Heaters-Due-to-Fire-and-Burn-Hazards",
+          "decision": "NOT_EVALUATED",
+          "reason": "No current completed assessment.",
+          "run_id": null,
+          "checks": [],
+          "missing_fields": [
+            "current_assessment"
+          ],
+          "mode": null
+        }
+      ],
+      "candidate_notices": [
+        {
+          "notice_id": "US-CPSC:9996",
+          "title": "Hatch Baby Recalls Power Adapters Sold with Rest 1st Generation Sound Machines Due to Shock Hazard",
+          "official_url": "https://www.cpsc.gov/Recalls/2024/Hatch-Baby-Recalls-Power-Adapters-Sold-with-Rest-1st-Generation-Sound-Machines-Due-to-Shock-Hazard",
+          "discovery_id": "ec3b12916718b7eb2afc3f968a830cd0559f2547b6bf922ffdc776d6f2e1d6ba",
+          "classification": "CANDIDATE_ONLY"
+        },
+        {
+          "notice_id": "US-CPSC:1283",
+          "title": "Brower Recalls Top Hatch Egg Incubators Due to Fire Hazard",
+          "official_url": "https://www.cpsc.gov/Recalls/2013/Brower-Recalls-Top-Hatch-Egg-Incubators-Due-to-Fire-Hazard",
+          "discovery_id": "ec3b12916718b7eb2afc3f968a830cd0559f2547b6bf922ffdc776d6f2e1d6ba",
+          "classification": "CANDIDATE_ONLY"
+        },
+        {
+          "notice_id": "US-CPSC:1210",
+          "title": "CPSC, Ace Hardware Corp. Announce Recall of Shingling Hatchets",
+          "official_url": "https://www.cpsc.gov/Recalls/2000/CPSC-Ace-Hardware-Corp-Announce-Recall-of-Shingling-Hatchets",
+          "discovery_id": "ec3b12916718b7eb2afc3f968a830cd0559f2547b6bf922ffdc776d6f2e1d6ba",
+          "classification": "CANDIDATE_ONLY"
+        }
+      ],
+      "external_inventory_updated": false
+    },
+    {
+      "lot_id": "inventory-d5977089cf1493b441036555057feb42",
+      "external_id": "000101",
+      "source_system": "sample-erp",
+      "sku": "HEAT-015",
+      "lot_number": "LOT-APR25",
+      "location": "WH-EAST",
+      "name": "DREO space heater",
+      "quantity": 47,
+      "source_updated_at": "2026-11-04T00:00:00Z",
+      "received_at": "2026-11-04T09:13:07.215674+00:00",
+      "version": "94e2e798f220f1c404b78637480ab4a239b468f12c9124c8e8e0179f2571f54d",
+      "import_id": "retailer-export-001",
+      "synthetic": true,
+      "data_classification": "synthetic-example",
+      "advisory": "CANDIDATES_FOUND",
+      "assessments": [
+        {
+          "notice_id": "US-CPSC:11038",
+          "notice_version": "c823e2e31589838c501d2425749be242baa57d284b22cf4d0264d5bc26986f51",
+          "official_url": "https://cpsc.gov/Recalls/2027/DREO-Recalls-DR-HSH015-Space-Heaters-Due-to-Fire-and-Burn-Hazards",
+          "decision": "NOT_EVALUATED",
+          "reason": "No current completed assessment.",
+          "run_id": null,
+          "checks": [],
+          "missing_fields": [
+            "current_assessment"
+          ],
+          "mode": null
+        }
+      ],
+      "candidate_notices": [
+        {
+          "notice_id": "US-CPSC:11038",
+          "title": "DREO Recalls DR-HSH015 Space Heaters Due to Fire and Burn Hazards",
+          "official_url": "https://cpsc.gov/Recalls/2027/DREO-Recalls-DR-HSH015-Space-Heaters-Due-to-Fire-and-Burn-Hazards",
+          "discovery_id": "ec3b12916718b7eb2afc3f968a830cd0559f2547b6bf922ffdc776d6f2e1d6ba",
+          "classification": "CANDIDATE_ONLY"
+        }
+      ],
+      "external_inventory_updated": false
+    }
+  ]
+}

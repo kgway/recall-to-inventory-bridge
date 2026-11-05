@@ -1,0 +1,13 @@
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.tar
+*.tar.gz
+.venv/
+__pycache__/
+*.py[cod]
+.artifacts/
+.scratch/
+node_modules/

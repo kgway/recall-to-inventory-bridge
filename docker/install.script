@@ -1,0 +1,3 @@
+try { set sc=$SYSTEM.OBJ.LoadDir("/opt/recall-guard/src","ck",,1) if $SYSTEM.Status.IsError(sc) { do $SYSTEM.Status.DisplayError(sc) do $SYSTEM.Process.Terminate(,1) } } catch ex { write ex.DisplayString(),! do $SYSTEM.Process.Terminate(,1) }
+write "Recall-to-Inventory Bridge classes imported",!
+do $SYSTEM.Process.Terminate(,0)

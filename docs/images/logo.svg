@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-labelledby="title">
+  <title id="title">Recall-to-Inventory Bridge</title>
+  <rect width="256" height="256" rx="40" fill="#f5f7f4"/>
+  <path d="M66 34h124q23 0 23 23v114q0 51-85 64-85-13-85-64V57q0-23 23-23Z" fill="none" stroke="#11694f" stroke-width="7"/>
+  <text x="128" y="152" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="78" font-weight="700" letter-spacing="-5" fill="#11694f">RIB</text>
+</svg>

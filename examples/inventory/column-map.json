@@ -1,0 +1,10 @@
+{
+  "external_id": "Record",
+  "sku": "Item Code",
+  "name": "Description",
+  "quantity": "On Hand",
+  "brand": "Maker",
+  "model": "Model",
+  "location": "Warehouse",
+  "lot_number": "Batch"
+}

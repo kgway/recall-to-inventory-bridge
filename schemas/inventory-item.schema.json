@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:recall-to-inventory-bridge:inventory-item:v1",
+  "title": "Inventory snapshot item v1",
+  "type": "object",
+  "required": ["sku", "name", "quantity"],
+  "properties": {
+    "external_id": {"type": ["string", "null"], "maxLength": 160},
+    "sku": {"type": "string", "minLength": 1, "maxLength": 160},
+    "name": {"type": "string", "minLength": 1, "maxLength": 300},
+    "quantity": {"type": "integer", "minimum": 0, "maximum": 1000000000},
+    "brand": {"type": ["string", "null"], "maxLength": 160},
+    "model": {"type": ["string", "null"], "maxLength": 160},
+    "manufacturer": {"type": ["string", "null"], "maxLength": 160},
+    "product_type": {"type": ["string", "null"], "maxLength": 160},
+    "location": {"type": ["string", "null"], "maxLength": 160},
+    "lot_number": {"type": ["string", "null"], "maxLength": 160},
+    "manufactured_month": {"type": ["string", "null"], "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])$"},
+    "upc": {"type": ["string", "null"], "pattern": "^(?:[0-9]{8}|[0-9]{12,14})$"},
+    "adapter_model": {"type": ["string", "null"], "maxLength": 160},
+    "generation": {"type": ["string", "null"], "maxLength": 160},
+    "source_updated_at": {"type": ["string", "null"], "format": "date-time"}
+  },
+  "description": "Canonical native JSON fields. Additional input fields are ignored and reported by preview; CSV can map alternative headers. Only accepted identity fields are used for assessment. No source field can grant writeback authority.",
+  "additionalProperties": true
+}

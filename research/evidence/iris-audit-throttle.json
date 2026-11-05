@@ -1,0 +1,70 @@
+{
+  "at_utc": "2026-11-04T12:17:56.310731+00:00",
+  "success": true,
+  "new_inferences": 0,
+  "native_run_reused": "6e9d0b1500614c66b0dd5da25e41f7f9",
+  "quantity_before": 47,
+  "observed_cycles": [
+    {
+      "cycle_id": "e7a3b13024e9527f3abcce634c5ebb390ff12a7d3daa807af951ef65fe7d0663",
+      "request_id": "timer-f6fb5e35e25f4c749a81c1f81323d4ee",
+      "trigger": "timer",
+      "status": "COMPLETED",
+      "started_at": "2026-11-04T12:21:56.809707+00:00",
+      "lease_until": "2026-11-04T12:31:56.809717+00:00",
+      "config_generation": 5,
+      "errors": [],
+      "limitations": [],
+      "refreshed_notice_ids": [
+        "US-CPSC:11038"
+      ],
+      "changed_notice_ids": [],
+      "new_candidate_ids": [],
+      "max_ai_runs": 1,
+      "complete_recall_coverage": false,
+      "external_inventory_updated": false,
+      "discovery_id": "28cfc08c85a4b27cb0272fb988f521d277f7b7d03caf7d063a91f06ae31e7124",
+      "query_count": 2,
+      "deferred_refresh_notice_ids": [],
+      "pending_evaluations": [],
+      "advisory_changes": [],
+      "remaining_evaluation_notices": 0,
+      "needs_attention": 1,
+      "finished_at": "2026-11-04T12:21:57.082264+00:00"
+    },
+    {
+      "cycle_id": "6b4e37fb11c1e9a72789e1ed236852b01d0f675bab68afb1b6c8b6f2a1e804d0",
+      "request_id": "timer-05941e4fbbd146db966ccb1953675dfd",
+      "trigger": "timer",
+      "status": "COMPLETED",
+      "started_at": "2026-11-04T12:19:57.021129+00:00",
+      "lease_until": "2026-11-04T12:29:57.021138+00:00",
+      "config_generation": 5,
+      "errors": [],
+      "limitations": [],
+      "refreshed_notice_ids": [
+        "US-CPSC:11038"
+      ],
+      "changed_notice_ids": [],
+      "new_candidate_ids": [],
+      "max_ai_runs": 1,
+      "complete_recall_coverage": false,
+      "external_inventory_updated": false,
+      "discovery_id": "eb8f582a95512e0d3705c06fd9d39f5ad775278092819034cc9ba4603fe7f13d",
+      "query_count": 2,
+      "deferred_refresh_notice_ids": [],
+      "pending_evaluations": [],
+      "advisory_changes": [],
+      "remaining_evaluation_notices": 0,
+      "needs_attention": 1,
+      "finished_at": "2026-11-04T12:19:57.526083+00:00"
+    }
+  ],
+  "queued_tick_count": 2,
+  "cycle_spacing_seconds": 119.788578,
+  "stock_unchanged": true,
+  "key_absent": true,
+  "monitor_disabled_after_check": true,
+  "finished_at_utc": "2026-11-04T12:21:57.757242+00:00",
+  "record_type": "Technical extract of an existing verification record; not a new inference."
+}
