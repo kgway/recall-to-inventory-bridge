@@ -6,7 +6,7 @@
   `RECALLGUARD`. The installer refuses another namespace or a running Production.
   It does not create a namespace, database, user or model credential.
 - IRIS 2026.3 or later **with `%AI.Agent`**. Plain IRIS without AI Hub is insufficient.
-  Builds 154 (2026.3) and 109 (2027.1) have passed the archive checks described above.
+  Builds 154 (2026.3) and 109 (2027.1) have passed source/archive installation checks.
   Use a fresh dedicated instance when changing release streams.
 - IPM 0.10.10 or later installed in `RECALLGUARD`; the tested client is pinned below.
 - An existing IRIS account with permission to install classes, configure the two
@@ -40,12 +40,20 @@ asset `zpm-0.10.10.xml` and verify its SHA-256:
 daa2adabd66b488f57187d29712e54b0c25bbe000794fbf2a35a882c458b788a
 ```
 
-In an IRIS terminal, in the prepared namespace:
+In an IRIS terminal, in the prepared namespace, install the client:
 
 ```objectscript
 zn "RECALLGUARD"
 do $SYSTEM.OBJ.Load("/path/to/zpm-0.10.10.xml","ck")
-zpm "load /path/to/recall-to-inventory-bridge -v"
+```
+
+A fresh IPM 0.9 or later installation does not enable the community registry by
+default. On this dedicated instance, configure the public registry if it is not
+already present, then install the application:
+
+```objectscript
+zpm "repo -r -n registry -url https://pm.community.intersystems.com/"
+zpm "install recall-to-inventory-bridge -v"
 zpm "list recall-to-inventory-bridge"
 ```
 
@@ -55,8 +63,10 @@ does not start a Production, seed inventory, fetch CPSC, change passwords or cal
 an LLM. It creates the same password-authenticated REST and CSP-login applications
 as the Docker installation, including the dedicated cookie path and CSRF setting.
 
-For a locally exported distribution, `zpm "load /path/to/package.tgz -v"` uses the
-same installation path. To export source already loaded into a stopped instance:
+For an offline source checkout, use
+`zpm "load /path/to/recall-to-inventory-bridge -v"` instead of the registry install.
+For a locally exported distribution, use `zpm "load /path/to/package.tgz -v"`.
+These use the same package lifecycle. To export source already loaded into a stopped instance:
 
 ```objectscript
 zpm "package recall-to-inventory-bridge -path /tmp/recall-to-inventory-bridge -v"

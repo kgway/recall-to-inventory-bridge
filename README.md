@@ -59,9 +59,10 @@ optional recorded AI course.
 python scripts/judge_demo.py stop --iris-build 109
 ```
 
-See [IPM installation](docs/ipm.md) for source-based package installation into a
-dedicated prepared instance. Use the public registry command only when the package
-is available there; local/archive installation is a separate verification.
+The package is also available from the public IPM registry. In a prepared,
+dedicated `RECALLGUARD` namespace with the community registry enabled, run
+`zpm "install recall-to-inventory-bridge"`. Follow [IPM installation](docs/ipm.md)
+for namespace preparation, registry setup and explicit Production startup.
 
 ## Evidence and authority
 

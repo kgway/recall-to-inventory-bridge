@@ -37,6 +37,15 @@ compiled 21 classes and verified twelve Python modules on 109, with separate
 snapshot/advisory and recorded courses, default-off monitoring and data-removal
 guards. This was source/archive installation, not a public-registry install.
 
+Public-registry installation of `0.1.0` was also checked on fresh build 109
+instances, without mounting an application checkout. All twelve installed Python
+modules matched the registry artifact. The recorded course matched 36 expected
+decisions without new inference. A separate snapshot course preserved leading-zero
+IDs and quantities, rejected sale requests, retrieved a real CPSC candidate and
+its official evidence, and exported advisory JSON/CSV with inference disabled.
+Monitoring stayed off by default, and ordinary removal refused saved records.
+See [IPM installation](ipm.md) for the required registry configuration.
+
 ## Portable checks
 
 ```bash
