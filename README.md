@@ -6,10 +6,37 @@ evidence with native IRIS AI Hub, and return versioned **advisories**. The exist
 ERP/WMS/POS and its operators own stock, sale and shipment actions.
 
 [First visit](docs/first-visit.md) · [日本語](docs/first-visit.ja.md) ·
-[Integration contract](docs/inventory-integration.ja.md) · [OpenAPI](schemas/openapi.json)
+[Integration contract](docs/inventory-integration.ja.md) · [OpenAPI](schemas/openapi.json) ·
+[Implementation map](#implementation-map)
 
 [Watch the 98-second operation demo](https://www.youtube.com/watch?v=kQNJ_kUx9tA):
 real CPSC retrieval, synthetic inventory and a separately labelled saved native AI run.
+[Download the identical MP4](https://github.com/kgway/recall-to-inventory-bridge/releases/download/v0.1.0/recall-to-inventory-bridge-demo.mp4)
+without signing in.
+
+## Inspect the output before installing IRIS
+
+Read the [captured advisory feed](examples/advisories/observed-keyless-advisories.json)
+and its [receiving worklist](examples/advisories/observed-review-worklist.json).
+These are saved real retrieval outputs over synthetic stock, not a running demo.
+With a source checkout and Python, the example receiver can create a worklist locally:
+
+```bash
+python examples/review_consumer.py --advisories examples/advisories/observed-keyless-advisories.json --output .artifacts/my-review-worklist.json
+```
+
+Open the resulting JSON: three tasks retain source-system IDs, leading-zero record
+references and recall candidates; `stock_action_performed` stays `false`. This
+command reads the bundled capture, makes no network or model calls, and refuses
+to overwrite an existing output. It demonstrates how an existing review process
+can consume the bridge's advice. Continue below to run the actual IRIS workflow.
+
+| Experience | Required setup | What it exercises |
+| --- | --- | --- |
+| Saved-output receiver above | Python only | Local tasks from a bundled advisory capture |
+| Snapshot course below | AI Hub 109 and Docker; no model key | Real CPSC retrieval, inventory import, recurring source checks and advice |
+| Optional recorded course | A separate empty AI Hub instance; no model key | Evidence-policy revalidation of saved genuine proposals and a synthetic consumer simulator |
+| Optional live investigation | AI Hub and an explicitly enabled provider key | A new native `%AI.Agent` investigation; provider limits apply |
 
 ## Workflow
 
@@ -85,6 +112,23 @@ native messages correlate run IDs, prompt/policy versions, tool context hashes a
 provider-returned usage. Per-provider HTTP spans and SDK-internal retries are
 outside the instrumentation. [Verification](docs/verification.md) distinguishes
 portable tests, recorded validation and genuine native investigations.
+
+## Implementation map
+
+The native agent interprets recall scope, including manufacturing windows,
+component identity and missing qualifiers. Its proposals carry exact source quotes.
+The separate validator checks those quotes and captured versions before storing
+advice. Candidate retrieval alone does not produce an AI assessment.
+
+| Component | Implementation | Inspect or reproduce |
+| --- | --- | --- |
+| Interoperability routing | [Production](src/RecallGuard/Production.cls), [Triage](src/RecallGuard/Process/Triage.cls), [CPSC operation](src/RecallGuard/Operation/CPSC.cls) | [English architecture and message flow](docs/architecture.md) |
+| Native AI Hub and scoped tool | [`%AI.Agent` subclass](src/RecallGuard/Agent/Investigator.cls), [ReadContext tool](src/RecallGuard/Agent/Tools.cls), [Gateway](src/RecallGuard/Gateway.cls) | [Genuine v7 investigation](research/evidence/iris-advisory-v7-native.json) |
+| Embedded Python and evidence validation | [Embedded Python bridge](src/RecallGuard/Backend.cls), [policy](python/recall_guard/policy.py), [engine](python/recall_guard/engine.py) | [Observed checks and limits](docs/verification.md) |
+| Custom adapter and recurring audits | [Inbound adapter](src/RecallGuard/Adapter/CPSCInbound.cls), [service](src/RecallGuard/Service/CPSC.cls), [monitor](python/recall_guard/monitor.py) | [Actual native timer and unchanged-cycle reuse](research/evidence/iris-recurring-audit.json) |
+| Native traceability, DPI-I-689 | [Run and session correlation guide](docs/traceability.md) | [Saved native message metadata](research/evidence/iris-recurring-audit-trace.json); use your own run IDs in a fresh instance |
+| IPM deployment | [Manifest](module.xml), [installation and registry configuration](docs/ipm.md) | [Source/archive and public-registry verification scopes](docs/verification.md#installation) |
+| Existing-system handoff | [JSON/CSV contract](schemas/openapi.json), [example receiver](examples/review_consumer.py) | [Captured advice and worklist](examples/advisories/observed-review-worklist.json) |
 
 ## Live inference and recurring audits
 

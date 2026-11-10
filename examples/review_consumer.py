@@ -34,6 +34,7 @@ def main():
     parser.add_argument("--output",type=Path,required=True)
     args=parser.parse_args()
     result=worklist(json.loads(args.advisories.read_text(encoding="utf-8")))
+    args.output.parent.mkdir(parents=True, exist_ok=True)
     with args.output.open("x",encoding="utf-8") as out:json.dump(result,out,ensure_ascii=False,indent=2)
     print(str(len(result["tasks"]))+" local review tasks written. No inventory system was contacted or changed.")
 

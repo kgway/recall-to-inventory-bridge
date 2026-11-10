@@ -11,6 +11,14 @@ inventory system owns every stock, sale and shipment action.
 Watch the [98-second operation demo](https://www.youtube.com/watch?v=kQNJ_kUx9tA)
 before starting. Its final AI segment inspects a separately saved genuine run.
 
+## Inspect a receiving workflow before setup
+
+The [saved-output receiver](../README.md#inspect-the-output-before-installing-iris)
+needs only Python. It turns a bundled advisory capture into three local review
+tasks without an IRIS installation, a model key or network access. This is a
+captured-output example. Follow the next section to use the actual IRIS UI and
+retrieve current CPSC information.
+
 ## Start a separate no-key instance
 
 Prepare Docker, Python and a privately obtained AI Hub Community image. The

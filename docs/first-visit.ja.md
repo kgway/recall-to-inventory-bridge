@@ -16,6 +16,12 @@ AI評価が残るとPARTIALと表示されます。原文確認だけで回収�
 このコースはモデルAPIキーを必要としない。実CPSC APIを使うため候補検索にはnetwork接続が必要。
 輸入・販売・出荷・既存システムの在庫変更は実行しない。
 
+## 起動の前に、出力から連携を試す
+
+まず[保存済み出力の受信例](../README.md#inspect-the-output-before-installing-iris)を試せます。
+Pythonだけで、同梱した助言JSONから3件の確認タスクを作ります。IRIS・APIキー・通信は不要です。
+これは取得済み出力を使う例です。実際の画面操作と現在のCPSC取得には、次のIRIS環境を使います。
+
 ## 空の109環境を起動する
 
 Docker、Pythonと、InterSystemsから各自が非公開で取得したAI Hub Community

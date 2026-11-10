@@ -1,112 +1,144 @@
-# Recall-to-Inventory Bridgeの実装構成
+# Architecture and decision boundaries
 
-2026-11-05更新。主用途は既存ERP/WMS/POSとのread-onlyな情報連携。
-在庫snapshotを取り込み、在庫起点のCPSC候補検索、選択告知のAI評価、根拠付き助言を渡す。
-販売停止、出荷、実在庫数量の変更を行う権限・接続先・書込toolは持たない。
+Recall-to-Inventory Bridge connects existing ERP/WMS/POS data to US CPSC evidence.
+It imports a local inventory snapshot, retrieves candidate notices, investigates
+selected evidence and returns versioned advice. The receiving system and its
+operators retain authority over stock, sales and shipments.
 
 ```mermaid
 flowchart LR
-    ERP[在庫CSV / JSON] --> API[REST / API Service]
-    API --> Triage[IRIS Triage Process]
-    Timer[Custom CPSC adapter: 60秒ごとにdue確認] --> Triage
-    Triage --> Hold[Hold Operation: 取込・版・証拠検証]
-    Triage --> Source[CPSCRefresh Operation: 在庫起点の候補と公式証拠]
-    Source --> CPSC[CPSC公式API / 詳細]
-    Triage --> Agent[native AI Hub Agent Operation]
-    Agent --> Gateway[ReadContext: scoped read-only tool]
-    Gateway --> Triage
-    Agent --> Gemini[確認済みGemini Free Tier]
-    Hold --> SQL[(IRIS SQL)]
-    Source --> SQL
-    SQL --> Feed[認証付き助言JSON / CSV]
-    Feed --> Receiver[既存システム / 人の確認業務]
+    ERP[Inventory CSV or JSON] --> API[REST and API Service]
+    subgraph IRIS[IRIS Interoperability and AI Hub]
+        API --> Triage[Triage Process]
+        Timer[Custom CPSC inbound adapter] --> Triage
+        Triage --> Source[CPSC source operation]
+        Triage --> Agent[Native AI Hub Agent operation]
+        Agent --> Tool[ReadContext via Gateway]
+        Tool --> Triage
+        Triage --> Hold[Hold operation: import and evidence validation]
+        Hold --> SQL[(IRIS SQL records)]
+        Source --> SQL
+        SQL --> Feed[Authenticated advisory JSON or CSV]
+    end
+    Source --> CPSC[Official CPSC API and detail pages]
+    Agent --> Model[Explicitly enabled Gemini provider]
+    Feed --> Receiver[Existing review workflow]
 ```
 
-## Productionの役割
+## Message routing and native agent
 
-API ServiceからTriageへ要求を流し、snapshotのpreview/importはHoldで同期処理する。
-候補検索・選択証拠の取得はCPSCRefreshで非同期に行う。HTTP 202は受付で、source_task/request_idで結果を追う。
-取得時にネットワークをDB lockの中へ入れない。開始・完了・失敗とquery結果を保存する。
-agentのworkerからEmbedded Pythonを呼ばず、native GatewayからHoldへcontextとvalidationを渡す。
-これは初期のworker混在を回避して実際のAI Hub調査が完了した構成を維持している。
+The [Production](../src/RecallGuard/Production.cls) routes API requests through
+the [Triage process](../src/RecallGuard/Process/Triage.cls). Snapshot previews and
+imports execute synchronously in Hold. Candidate discovery and selected-source
+retrieval execute asynchronously in CPSC. HTTP 202 confirms acceptance;
+`source_task` and `request_id` identify the stored result or failure.
 
-独自CPSC inbound adapterは60秒ごとにローカルの監査dueを確認し、有効なときだけaudit_tickをqueueへ送る。
-監査は既定offで、従来のcurated demo refreshのPollEnabledも既定disabled。
-snapshot workspaceではcurated 3 IDへのrefreshを拒否し、ユーザーが確認した在庫検索planを使用する。
-Retailer Operationは任意のlocal synthetic downstream simulator用。snapshot workspaceではサーバー側で拒否する。
-標準Workflow Engine、PEXやVector Searchは追加していない。
+The [investigator](../src/RecallGuard/Agent/Investigator.cls) is a native `%AI.Agent`
+subclass. It interprets product scope and returns structured proposals. Its one
+scoped read-only tool receives the full selected source snapshots and relevant
+product attributes. It has no external action tool. The native Gateway routes
+context access and validation through Hold, keeping Embedded Python out of the
+agent worker. Model and source network waits occur outside database transactions.
 
-monitor.pyは在庫検索・選択告知最大5件の再取得・差分履歴を管理する。queue予約をatomicにし、
-serviceは%WaitForNextCallIntervalを設定して同じdueの大量投入を防ぐ。
-AIは別のopt-inで、1周期1調査・既存日次cap以内。worker側でもpolicy世代、入力版、重複を再確認する。
-原文更新は旧評価を古くし、不完全な監査はaudit_attentionとして確認worklistへ渡す。
-履歴は最新10周期。時刻はadapterの確認境界に依存し、設定間隔に最大約1分の追加待ちがある。
-詳しくは[監査の契約](recurring-audit.md)を参照。
+Interoperability messages correlate run IDs, audit-cycle IDs, input versions,
+context hashes, prompt/policy versions and provider-returned usage. The
+[DPI-I-689 trace guide](traceability.md) shows actual saved sessions and explains
+how to inspect a new installation's own run IDs. SDK-internal provider turns,
+retries and HTTP spans are outside this instrumentation.
 
-## Snapshotの境界
+## Inventory and source boundaries
 
-inventory.pyはUTF-8 CSV/JSON、列aliasと明示的mapping、入力サイズ・型・識別子を検証する。
-previewは書き込まず、全行が有効な入力だけ取り込める。preview_hashとworkspace_revisionにより、
-入力差替えやpreview後の競合を検出する。source_system/import_idの内容hashで再送を冪等にする。
-元システムの更新日時があれば逆順到着と同じ日時の矛盾を拒否する。
+[Inventory import](../python/recall_guard/inventory.py) validates UTF-8 CSV/JSON,
+column aliases or explicit mappings, input sizes, types and identifiers. Preview
+does not write records. `preview_hash` and `workspace_revision` reject changed
+inputs or stale previews; `source_system` and `import_id` make captures idempotent.
+Source timestamps reject out-of-order updates and conflicting equal timestamps.
 
-保存するのはローカルのsnapshotと取込履歴。SKU/外部IDは文字列。外部IDがない場合はSKU・lot・locationを複合識別する。
-数量は元システムの報告値としてのみ更新し、AI評価のidentity versionには含めない。
-製造月・型番・部品・世代などが変わると評価を古くする。データ分類の変更もidentity versionを変える。
-未掲載レコードは削除しない。元システムへ戻す更新・注文・販売停止のコードはない。
+SKU and external IDs remain strings. Without an external ID, SKU, lot and location
+form the record identity. Quantity is a reported source value; it is excluded
+from the AI identity version. Changes to model, manufacture date, component,
+generation or data classification invalidate prior assessments. Absent rows are
+not implicitly deleted. No connector writes these snapshots back to an ERP.
 
-## 候補検索とAI評価を分ける
+[Discovery](../python/recall_guard/discovery.py) sends only reviewed product terms
+through supported CPSC parameters. It omits business IDs, warehouse, quantity and
+serial from queries. A repeated request ID reuses its stored discovery. Partial
+queries, limits and failures remain visible; zero results never establish safety.
+Candidates do not become assessments merely because a search returned them.
 
-CPSCの正式parameterだけで、表示した商品語句を検索する。SKU・外部ID・倉庫・数量・serialはqueryに含めない。
-request_idによる再送は同じ検索結果を返し、無制限に取り直さない。
-検索は部分一致で、無関係な候補があり得る。0件やquery失敗を安全性の根拠にしない。
-検索候補の時点ではassessmentを作らない。
+Selecting a candidate fetches its official evidence and checks that inventory
+identity versions have not changed before activating the notice. The scoped AI
+context omits SKU, external ID, warehouse and quantity, while retaining opaque lot
+IDs, versions and relevant product attributes. Expected labels are never supplied
+to the agent. Source and inventory text cannot grant new tool authority.
 
-候補を選ぶと公式詳細を再取得し、検索時の在庫版がまだ有効な場合だけ評価対象にする。
-live AIはoperatorが明示した場合だけ呼ぶ。最新promptはinvestigator-v7-advisoryで、
-外部操作の権限を持たないと明記する。関連在庫を最大20件ずつ処理し、完了済みの現在版を無駄に再推論しない。
+## Evidence validation and advice
 
-ReadContextは完全な公式snapshotと必要な商品属性を渡す。snapshotコースでは業務上のSKU/外部ID/倉庫/数量を除き、
-opaque lot_id、identity version、ブランド・型番・製造月・部品・世代・UPC等だけを渡す。
-期待ラベルはagentに渡さない。sourceやinventoryの文字列を権限変更の指示として扱わない。
+Hold checks proposals for exact quotes, source and inventory versions, supported
+operators, identifiers, inclusive manufacturing ranges, component identity,
+generations, qualifiers and contradictions. Confidence alone grants no clearance.
+Missing identifiers, unsupported claims or invalid quotes require review. A narrow
+input decoder normalizes only unambiguous two-month strings and records the
+original proposal alongside the conversion.
 
-## 証拠検証と助言
+Internal `HOLD_RECALL` and related identifiers preserve technical compatibility.
+The external feed uses `RECALL_MATCH`, `REVIEW_REQUIRED`, `NOT_EVALUATED`,
+`NO_MATCH_IN_SELECTED_NOTICES` and `CANDIDATES_FOUND`. Every feed states
+`ADVISORY_ONLY`, `external_inventory_updated=false` and its limited notice scope.
+Saved feeds remain readable when the Production is stopped.
 
-native %AI.Agentが返すMATCH_RECALL / NO_MATCH_FOR_NOTICE / INSUFFICIENT_EVIDENCEをHoldで検証する。
-引用の実在、snapshot/lot版、条件演算子、型番、製造月範囲、対象部品、世代、qualifierと矛盾を検査する。
-confidenceだけで許可を出さない。policyはevidence-v2のまま。無効な引用は確認送りにする。
-限定したinput decoderは曖昧さのない2か月の文字列表現だけを配列化し、元提案と変換を記録する。
+Operator review stores the authenticated reviewer and source/inventory/run
+versions. Stale or duplicate reviews are rejected. Review changes a local
+assessment, not source inventory, and cannot release a confirmed recall match.
 
-内部のHOLD_RECALL等は後方互換の評価コード。外部への助言はRECALL_MATCH、REVIEW_REQUIRED、
-NOT_EVALUATED、NO_MATCH_IN_SELECTED_NOTICES、未評価でも候補がある場合はCANDIDATES_FOUND。
-いずれもADVISORY_ONLYで、販売停止命令・在庫変更・出荷許可ではない。
-read feedはProduction停止中でも保存済み情報から取得できる。
+## Recurring audits
 
-operator reviewは認証済みユーザーと原文/在庫/run版を保存し、古い内容や二重確認を拒否する。
-変更するのはローカルassessmentだけで、元在庫は変更しない。確認済み回収対象をこのreviewだけで解除しない。
+The [custom inbound adapter](../src/RecallGuard/Adapter/CPSCInbound.cls) checks
+local due state every 60 seconds and queues an audit only when explicitly enabled.
+Monitoring defaults to off. The service uses `%WaitForNextCallInterval`, and queue
+reservation is atomic. Snapshot workspaces use their reviewed inventory search
+plan and refuse the older fixed-ID demonstration refresh path.
 
-## 歴史的な実AIデモとsimulator
+[Monitoring](../python/recall_guard/monitor.py) searches candidates, refreshes up
+to five selected notices per cycle and records source changes, omissions and
+failures. Source changes invalidate old assessments; incomplete audits also reach
+the receiving worklist. The latest ten cycles are retained. Actual timing can
+add up to about a minute to the selected interval.
 
-固定packageのgenuine v6提案と当時のCPSC/模擬在庫を、その場の証拠policyで再検証する別courseを残す。
-元prompt版は推論の来歴なのでv6を保ち、最新live prompt v7と混同しない。
-package hash、元ReadContext hash、原文/在庫版を照合し、元runとusageをrecorded_originに保存する。
-新規runはmode=recorded-demo、tool_calls空、usageなし。新しい推論やAI traceを捏造しない。
+Automatic AI is a separate opt-in, limited to one investigation per cycle and
+the existing daily cap. The worker rechecks policy generation, input versions and
+duplicates. Current assessments are reused, and unchanged failed inputs are not
+repeatedly investigated. See the [audit contract](recurring-audit.md).
 
-このcourseのSale/Shipは模擬consumer。pool size 1、atomic SQL、idempotencyと混合注文拒否を持つ。
-実在庫snapshotはこのAPIへ渡せず、仮にsynthetic-exampleと分類してもサーバーで拒否する。
-ブラウザーはsimulatorの未確認receiptをsessionStorageに保ち、再送で二重消費しない。
-既存snapshotと記録済みデモを混在させず、resetや数量補充によるやり直しを行わない。
+## Separate recorded course and synthetic consumer
 
-## 費用、保存と拡張
+The optional recorded course verifies a pinned original v6 context and proposals,
+then revalidates them with the evidence policy. It preserves original prompt
+versions and provider usage as provenance. New validation records have
+`mode=recorded-demo`, empty tool calls and no new inference usage; they are not
+fresh v7 AI investigations.
 
-Geminiを使う場合は、Free Tier・請求先未連携であることを利用者が確認する。有料fallbackなし。
-既定5 investigations/UTC日、agent loop 4まで。失敗・期限切れや不足証拠を確認済みとして扱わない。
-新しいpromptのlive検証と、保存済みv6の再検証の結果は別々に記録する。
+Sale/Ship is available only to the separate local synthetic consumer simulator.
+It uses a pool size of one, atomic SQL, idempotent requests and mixed-order refusal.
+Imported snapshots cannot use that API, even if classified as synthetic examples.
+The browser retains an unconfirmed receipt in session storage for safe retry.
+Snapshot and recorded courses cannot be mixed or reset to replenish quantities.
 
-IRISの種類別JSONにnotice、lot、run、assessment、transaction、review、event、metaに加え
-inventory_import、discoveryを保存する。モデル待ちとCPSC通信は共通mutex/DB transactionの外で行う。
-API/詳細の原文、出典URL、取得時刻、hashを保持し、nativeメッセージとrun IDで業務処理へ追跡する。
+## Persistence, inference limits and extension seams
 
-評価版は100レコード、8queries/検索、40候補・選択告知40件まで。全CPSC索引・大規模同期・全件coverageではない。
-regulator正規化、snapshot取込、助言feedを境界にして、将来の別当局や受信側adapterを追加できる。
-今回の実装対象はUS-CPSC。FDA、他国、製品固有ERP connectorは含めない。
+IRIS persists typed JSON records for notices, lots, runs, assessments,
+transactions, reviews, events, metadata, inventory imports and discoveries.
+Evidence retains original content, URLs, retrieval times and hashes.
+
+The default inference cap is five investigations per UTC day, with at most four
+agent rounds. Gemini use requires the installer's Free Tier/no-billing confirmation;
+there is no paid fallback. Provider request counts can exceed investigation counts.
+Failures, expired runs and missing evidence never count as a completed assessment.
+
+The evaluation supports 100 inventory records, eight queries per search, 40
+candidates and 40 selected notices. It supplies neither a complete CPSC index nor
+general safety clearance. Regulator normalization, snapshot import and the
+advisory feed form extension seams for other sources and receiving adapters.
+Only US CPSC is implemented; FDA, other national feeds and vendor-specific ERP
+connectors are outside this version. Native Workflow Engine, Java/.NET PEX and
+Vector Search are not part of the current Production.

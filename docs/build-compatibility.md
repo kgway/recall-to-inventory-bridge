@@ -14,5 +14,8 @@ from an older EAP build is not established by these tests.
 - The no-key recorded course revalidates original v6 proposals. It is not fresh inference.
 - The source-free IPM check on 109 compiled 21 classes and twelve matching Python
   modules. Source/archive installation does not establish registry installation.
+- A separate public-registry `0.1.0` check on fresh build 109 instances also passed
+  the snapshot/CPSC and recorded courses without a model key or checkout mount.
+  See [IPM prerequisites](ipm.md) and the [installation scope](verification.md#installation).
 
 See [verification](verification.md) and [native traces](traceability.md).
